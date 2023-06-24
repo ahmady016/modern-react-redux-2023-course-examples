@@ -1,17 +1,9 @@
-import React from "react"
+import ProfileCardPage from './ProfileCard/ProfileCardPage'
 
 function App() {
-  const [count, setCount] = React.useState(0)
-
   return (
     <main>
-      <h2>Vite + React</h2>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-      <p>
-        Click on the Vite and React logos to learn more
-      </p>
+      <ProfileCardPage />
     </main>
   )
 }
