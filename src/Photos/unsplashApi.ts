@@ -2,36 +2,6 @@
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 
-const unsplashApi =  axios.create({
-	baseURL: 'https://api.unsplash.com',
-	headers: {
-		Authorization: 'Client-ID zXa3hL6eTUiwtelAxOC3btIm2PU-SZNzJHgglinFTR0',
-	},
-})
-
-export interface PhotoResult {
-	total: number
-	total_pages: number
-	results: Photo[]
-}
-
-export interface Photo {
-	id: string
-	created_at: string
-	width: number
-	height: number
-	color: string
-	blur_hash: string
-	likes: number
-	liked_by_user: boolean
-	description: string
-    alt_description: string
-	user: User
-	current_user_collections: any[]
-	urls: Urls
-	links: Links2
-}
-
 interface Links2 {
 	self: string
 	html: string
@@ -71,6 +41,38 @@ interface ProfileImage {
 	medium: string
 	large: string
 }
+
+export interface Photo {
+	id: string
+	created_at: string
+	width: number
+	height: number
+	color: string
+	blur_hash: string
+	likes: number
+	liked_by_user: boolean
+	description: string
+    alt_description: string
+	user: User
+	current_user_collections: any[]
+	urls: Urls
+	links: Links2
+}
+export interface PhotoResult {
+	total: number
+	total_pages: number
+	results: Photo[]
+}
+export type PhotoViewProps = {
+	photos: Photo[]
+}
+
+const unsplashApi =  axios.create({
+	baseURL: 'https://api.unsplash.com',
+	headers: {
+		Authorization: 'Client-ID zXa3hL6eTUiwtelAxOC3btIm2PU-SZNzJHgglinFTR0',
+	},
+})
 
 export const fetchPhotos = async (query = "", page = 1) => {
     const { data } = await unsplashApi.get<PhotoResult>(`/search/photos?order_by=latest&per_page=10&query=${query}&page=${page}`)
