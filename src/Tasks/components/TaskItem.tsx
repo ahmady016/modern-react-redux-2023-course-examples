@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 
-import { TaskItemProps } from '../types'
+import { TaskItemProps, taskColors } from '../types'
 
 const TaskItem: React.FC<TaskItemProps> = ({
 	task,
@@ -21,10 +21,10 @@ const TaskItem: React.FC<TaskItemProps> = ({
 			<span className="title">{task.title}</span>
 			<p>{task.description}</p>
 			<div className="flex-between">
-				<p>Created At: {task.createdAt}</p>
+				<p>Created At: {task.createdAt.split('T')[0]}</p>
 				<p>Completed At: {task.completedAt}</p>
 			</div>
-            <div className="flex-between">
+            <div className={`flex-between ${taskColors[task.priority]}`}>
 				<p>Due Date At: {task.dueDate}</p>
                 <p>Priority: {task.priority}</p>
             </div>

@@ -6,7 +6,12 @@ export enum TaskPriorities {
 	RealTime = 'real-time',
 }
 export const taskPriorities = Object.values(TaskPriorities)
-
+export const taskColors : Record<string, string> = {
+	'low': 'yellow accent-2',
+	'normal': 'green lighten-2',
+	'high': 'blue lighten-2',
+	'real-time': 'red lighten-2'
+}
 export interface Task {
 	id: string
 	title: string
