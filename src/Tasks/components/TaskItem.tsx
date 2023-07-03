@@ -2,10 +2,12 @@
 import React from 'react'
 import Swal from 'sweetalert2'
 
-import { useDeleteTask } from '../tasksApi'
 import { TaskItemProps, taskColors } from '../types'
+import { useTasksContext } from '../TasksContext'
+import { useDeleteTask } from '../tasksApi'
 
-const TaskItem: React.FC<TaskItemProps> = ({ task, setSelectedTask }) => {
+const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+	const { setSelectedTask } = useTasksContext()
 	const handleEdit = React.useCallback(() => void setSelectedTask(task), [task])
 	const { deleteTaskAsync, isDeletedTaskLoading } = useDeleteTask()
 	const handleRemove = React.useCallback(async () => {
@@ -36,20 +38,22 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, setSelectedTask }) => {
 				<p>Due Date: {task.dueDate}</p>
                 <p>Priority: {task.priority}</p>
             </div>
-			<span className="secondary-content">
-				<i
-					className="material-icons green-text darker-4 pointer"
+			<div className="secondary-content mt--05">
+				<button
+					type="button"
+					className="btn-floating grey lighten-3 mr-1"
 					onClick={handleEdit}
 				>
-					create
-				</i>
-				<i
-					className="material-icons red-text darker-4 pointer"
+					<i className="material-icons green-text darker-4">create</i>
+				</button>
+				<button
+					type="button"
+					className={`btn-floating grey lighten-3 ${isDeletedTaskLoading ? 'pulse' : ''}`}
 					onClick={handleRemove}
 				>
-					{isDeletedTaskLoading ? "sync" : "delete" }
-				</i>
-			</span>
+					<i className="material-icons red-text darker-4">delete</i>
+				</button>
+			</div>
 		</li>
 	)
 }

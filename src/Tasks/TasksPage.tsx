@@ -1,18 +1,16 @@
 import React from 'react'
-
-import { Task, defaultTask } from './types'
+import TasksContextProvider from './TasksContext'
 
 import TaskForm from './components/TaskForm'
 import TaskList from './components/TaskList'
 
 const TasksPage: React.FC = () => {
-	const [selectedTask, setSelectedTask] = React.useState<Task>(defaultTask)
 	return (
-		<>
+		<TasksContextProvider>
 			<h4>Tasks Page</h4>
-			<TaskForm task={selectedTask} />
-            <TaskList setSelectedTask={setSelectedTask} />
-		</>
+			<TaskForm />
+            <TaskList />
+		</TasksContextProvider>
 	)
 }
 

@@ -31,13 +31,6 @@ export const defaultTask : Task = {
 	completedAt: ''
 }
 
-export type TaskFormProps = {
-    task: Task
-}
-export type TaskListProps = {
-	setSelectedTask: React.Dispatch<React.SetStateAction<Task>>
-}
 export type TaskItemProps = {
     task: Task
-	setSelectedTask: React.Dispatch<React.SetStateAction<Task>>
 }
