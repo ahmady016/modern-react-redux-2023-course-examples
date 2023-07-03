@@ -1,16 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-import { nanoid } from 'nanoid'
+import Swal from 'sweetalert2'
 import M from 'materialize-css'
+import { nanoid } from 'nanoid'
 
+import { useCreateTask, useUpdateTask } from '../tasksApi'
 import { TaskFormProps, Task, defaultTask, taskPriorities } from '../types'
 
-const TaskForm: React.FC<TaskFormProps> = ({ task, createTask, updateTask }) => {
+import { MaterializeSpinner } from '../../components/MaterializeSpinner'
+
+const TaskForm: React.FC<TaskFormProps> = ({ task }) => {
 	const [state, setState] = React.useState<Task>(task)
 	const onChange = React.useCallback(
 		(e: any) => setState((state) => ({ ...state, [e.target.name]: e.target.value })),
 	[])
+
+	const { createTaskAsync, isCreatedTaskLoading } = useCreateTask()
+	const { updateTaskAsync, isUpdatedTaskLoading } = useUpdateTask()
 
 	// resetting the form state when task prop is changed and reinitialized Materialize Form Select Element
 	const PriorityElement = React.useRef<HTMLSelectElement | null>(null)
@@ -26,16 +33,32 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, createTask, updateTask }) => 
 	}, [])
 
 	// handle form submission be creating or updating the task and resetting the form state and reinitialized Materialize Form Select Element
-	const handleSubmit = React.useCallback((e: any) => {
+	const handleSubmit = React.useCallback(async (e: any) => {
 		e.preventDefault()
-		if(state.id)
-			updateTask(state)
+		if(state.id) {
+			try {
+				const updatedTask = await updateTaskAsync(state)
+				console.log("🚀: TaskForm -> handleSubmit -> updatedTask:", updatedTask)
+				Swal.fire('Succeeded', `Task with Id: ${state.id} was updated successfully`, 'success')
+				resetForm()
+			} catch (error) {
+				console.log("🚀: TaskForm -> handleSubmit -> updatedTaskError:", error)
+				Swal.fire('Oops...', 'something went wrong when updating the task', 'error')
+			}
+		}
 		else {
 			state.id = nanoid(12)
 			state.createdAt = new Date().toISOString()
-			createTask(state)
+			try {
+				const createdTask = await createTaskAsync(state)
+				console.log("🚀: TaskForm -> handleSubmit -> createdTask:", createdTask)
+				Swal.fire('Succeeded', `Task with Id: ${state.id} was created successfully`, 'success')
+				resetForm()
+			} catch (error) {
+				console.log("🚀: TaskForm -> handleSubmit -> createdTaskError:", error)
+				Swal.fire('Oops...', 'something went wrong when creating the task', 'error')
+			}
 		}
-		resetForm()
 	}, [state])
 
 	return (
@@ -94,14 +117,17 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, createTask, updateTask }) => 
 				<button
 					type="submit"
 					className="btn waves-effect waves-light w-40"
-					disabled={!state.title && !state.description && !state.priority && !state.dueDate}
+					disabled={isCreatedTaskLoading || isUpdatedTaskLoading || !state.title && !state.description && !state.priority && !state.dueDate}
 				>
-					Submit
+					{isCreatedTaskLoading || isUpdatedTaskLoading
+						? <MaterializeSpinner centered={false} small={true} />
+						: 'Submit'
+					}
 				</button>
 				<button
 					type="button"
 					className="btn waves-effect waves-light w-40"
-					disabled={!state.id}
+					disabled={isCreatedTaskLoading || isUpdatedTaskLoading || !state.id}
 					onClick={resetForm}
 				>
 					Reset

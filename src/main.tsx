@@ -8,7 +8,17 @@ import M from 'materialize-css'
 import App from './App.tsx'
 import './index.css'
 
-const queryClient = new QueryClient()
+export const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: true,
+			refetchOnMount: false,
+			refetchOnReconnect: true,
+			staleTime: 3 * 60000,
+			retry: 3,
+		}
+	}
+})
 const root = createRoot(document.getElementById('root') as HTMLElement)
 root.render(
 	<QueryClientProvider client={queryClient}>

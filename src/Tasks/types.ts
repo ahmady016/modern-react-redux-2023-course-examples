@@ -33,16 +33,11 @@ export const defaultTask : Task = {
 
 export type TaskFormProps = {
     task: Task
-    createTask: (newTask: Task) => void
-    updateTask: (updatedTask: Task) => void
 }
 export type TaskListProps = {
-    tasks: Task[]
-    removeTask: (removedTask: Task) => void,
 	setSelectedTask: React.Dispatch<React.SetStateAction<Task>>
 }
 export type TaskItemProps = {
     task: Task
-    removeTask: (removedTask: Task) => void,
 	setSelectedTask: React.Dispatch<React.SetStateAction<Task>>
 }

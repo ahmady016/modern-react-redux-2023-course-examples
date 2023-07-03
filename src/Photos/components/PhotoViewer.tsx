@@ -1,7 +1,7 @@
 import React from 'react'
 import { FetchStatus } from '@tanstack/react-query'
 
-import { MaterializeSpinner } from './MaterializeSpinner'
+import { MaterializeSpinner } from '../../components/MaterializeSpinner'
 import { PhotoDetailsView } from './PhotoDetailsView'
 import { PhotoThumbnailsView } from './PhotoThumbnailsView'
 

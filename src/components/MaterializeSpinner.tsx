@@ -7,9 +7,13 @@ const SpinnerWrapper = styled.div`
 	align-items: center;
 `
 
-function TheSpinner() {
+type TheSpinnerProps = {
+	small?: boolean
+}
+
+const TheSpinner: React.FC<TheSpinnerProps> = ({ small }) => {
 	return (
-		<div className="preloader-wrapper active">
+		<div className={`preloader-wrapper active ${small ? 'small' : ''}`}>
 			<div className="spinner-layer spinner-red-only">
 				<div className="circle-clipper left">
 					<div className="circle"></div>
@@ -27,12 +31,13 @@ function TheSpinner() {
 
 type SpinnerProps = {
 	centered?: boolean
+	small?: boolean
 }
 
-export const MaterializeSpinner: React.FC<SpinnerProps> = ({ centered = true }) => {
+export const MaterializeSpinner: React.FC<SpinnerProps> = ({ centered = true, small = false }) => {
 	return centered
 		?	<SpinnerWrapper>
 				<TheSpinner />
 			</SpinnerWrapper>
-		: <TheSpinner />
+		: <TheSpinner small={small} />
 }

@@ -1,15 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
+import Swal from 'sweetalert2'
 
+import { useDeleteTask } from '../tasksApi'
 import { TaskItemProps, taskColors } from '../types'
 
-const TaskItem: React.FC<TaskItemProps> = ({
-	task,
-	removeTask,
-	setSelectedTask,
-}) => {
+const TaskItem: React.FC<TaskItemProps> = ({ task, setSelectedTask }) => {
 	const handleEdit = React.useCallback(() => void setSelectedTask(task), [task])
-	const handleRemove = React.useCallback(() => void removeTask(task), [task])
+	const { deleteTaskAsync, isDeletedTaskLoading } = useDeleteTask()
+	const handleRemove = React.useCallback(async () => {
+		try {
+			const deletedTask = await deleteTaskAsync(task.id)
+			console.log("🚀: TaskItem -> handleRemove -> deletedTask", deletedTask)
+			Swal.fire('Succeeded', `Task with Id: ${task.id} was deleted successfully`, 'success')
+		} catch (error) {
+			console.log("🚀: TaskItem -> handleRemove -> deletedTaskError:", error)
+			Swal.fire('Oops...', 'something went wrong when deleting the task', 'error')
+		}
+	}, [task])
 
 	return (
 		<li key={task.id} className="collection-item avatar">
@@ -24,8 +32,8 @@ const TaskItem: React.FC<TaskItemProps> = ({
 				<p>Created At: {task.createdAt.split('T')[0]}</p>
 				<p>Completed At: {task.completedAt}</p>
 			</div>
-            <div className={`flex-between ${taskColors[task.priority]}`}>
-				<p>Due Date At: {task.dueDate}</p>
+            <div className={`card-panel ${taskColors[task.priority]} flex-between`}>
+				<p>Due Date: {task.dueDate}</p>
                 <p>Priority: {task.priority}</p>
             </div>
 			<span className="secondary-content">
@@ -39,7 +47,7 @@ const TaskItem: React.FC<TaskItemProps> = ({
 					className="material-icons red-text darker-4 pointer"
 					onClick={handleRemove}
 				>
-					delete
+					{isDeletedTaskLoading ? "sync" : "delete" }
 				</i>
 			</span>
 		</li>
