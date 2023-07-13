@@ -7,13 +7,13 @@ const ButtonPage: React.FC = () => {
 	return (
         <div className="w-64 my-2 mx-auto text-center">
             <p className="my-1">
-                <Button primary rounded outline>
+                <Button primary rounded outline title="Click Me To be Approved">
                     <FcApproval />
                     Click Me
                 </Button>
             </p>
             <p className="my-1">
-                <Button secondary>
+                <Button secondary onClick={e => void console.log("🚀: ButtonPage Buy Now Button Classes:", e.currentTarget.classList)}>
                     <FcDebt />
                     Buy Now
                 </Button>

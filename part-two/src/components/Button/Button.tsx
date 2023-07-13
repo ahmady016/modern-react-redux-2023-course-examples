@@ -1,10 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 
-type ButtonProps = {
+type ButtonProps = React.ComponentProps<'button'> & {
 	rounded?: boolean
 	outline?: boolean
-	children: React.ReactNode
     primary?: boolean
     secondary?: boolean
     success?: boolean
@@ -24,8 +23,9 @@ const Button: React.FC<ButtonProps> = (props) => {
     if(!checkButtonVariation(props))
         return <div className="p-2 border border-red-900 bg-red-500 text-red-950">Please supply only one variant prop</div>
 
-    const { rounded, outline, children, primary, secondary, success, info, warning, danger } = props
-    const classes = classNames('flex justify-center items-center w-full px-3 py-2 border', {
+    const { rounded, outline, primary, secondary, success, info, warning, danger, className, children, ...rest } = props
+    const classes = classNames(className,
+        'flex justify-center items-center w-full px-3 py-2 border', {
         'border-blue-500 bg-blue-500': primary,
         'border-gray-700 bg-gray-700': secondary,
         'border-green-500 bg-green-500': success,
@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = (props) => {
         'text-yellow-400': outline && warning,
         'text-red-500': outline && danger,
     })
-	return <button className={classes}>{children}</button>
+	return <button {...rest} className={classes}>{children}</button>
 }
 
 export default Button
