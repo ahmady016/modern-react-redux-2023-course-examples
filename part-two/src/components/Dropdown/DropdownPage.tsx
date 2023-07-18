@@ -1,27 +1,39 @@
 import React from 'react'
 
 import Dropdown from './Dropdown'
-
-import data from './data'
+import { countries, days, languages } from './data'
 
 const DropdownPage: React.FC = () => {
-	const [isOpen, setIsOpen] = React.useState<boolean>(false)
-	const toggleOpened = React.useCallback(() => setIsOpen((isOpen) => !isOpen), [])
+	const [selectedCountry, setSelectedCountry] = React.useState<string>('')
+	const handleCountryChange = React.useCallback((country: string) => void setSelectedCountry(country), [])
 
-	const [selectedValue, setSelectedValue] = React.useState<string>('')
-	const handleChange = React.useCallback((e: React.MouseEvent<HTMLElement>) => {
-		setSelectedValue(e.currentTarget.id)
-		setIsOpen(false)
-	}, [])
+	const [selectedLanguage, setSelectedLanguage] = React.useState<string>('')
+	const handleLanguageChange = React.useCallback((language: string) => void setSelectedLanguage(language), [])
+
+	const [selectedDay, setSelectedDay] = React.useState<string>('')
+	const handleDayChange = React.useCallback((day: string) => void setSelectedDay(day), [])
 
 	return (
-		<Dropdown
-            options={data}
-			isOpen={isOpen}
-			toggleOpened={toggleOpened}
-			value={selectedValue}
-			onChange={handleChange}
-		/>
+		<>
+			<Dropdown
+				options={countries}
+				label="Select Country ..."
+				value={selectedCountry}
+				onChange={handleCountryChange}
+			/>
+			<Dropdown
+				options={languages}
+				label='Select language ...'
+				value={selectedLanguage}
+				onChange={handleLanguageChange}
+			/>
+			<Dropdown
+				options={days}
+				label='Select Day ...'
+				value={selectedDay}
+				onChange={handleDayChange}
+			/>
+		</>
 	)
 }
 
