@@ -5,8 +5,8 @@ import Button from './Button'
 
 const ButtonPage: React.FC = () => {
 	return (
-        <div className="w-64 my-2 mx-auto text-center">
-            <p className="my-1">
+        <div className="w-64 m-auto text-center">
+            <p className="pt-1 mb-1">
                 <Button primary rounded outline title="Click Me To be Approved">
                     <FcApproval />
                     Click Me

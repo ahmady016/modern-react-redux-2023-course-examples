@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+    min-height: 81vh;
+}
+
 button > svg {
     margin-right: 5px;
 }
