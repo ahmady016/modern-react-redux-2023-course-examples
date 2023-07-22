@@ -2,9 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 
-const baseLinkClasses = "block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500"
+const baseLinkClasses = "block hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-300 md:dark:hover:text-blue-300"
 const normalLinkClasses = "text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
-const activeLinkClasses = "text-blue-300 dark:text-blue-300 dark:hover:bg-gray-700 dark:hover:text-white"
+const activeLinkClasses = "pb-1 border border-l-0 border-r-0 border-t-0 border-b-3 border-blue-300 font-bold text-blue-300 dark:text-blue-300 dark:hover:bg-gray-700 dark:hover:text-white"
 
 const Header: React.FC = () => {
     return (
