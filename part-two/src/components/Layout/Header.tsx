@@ -12,6 +12,7 @@ const navLinks : Record<string, string> = {
     "accordion": "Accordion",
     "dropdown": "Dropdown",
     "modal": "Modal",
+    "table": "Table"
 }
 
 const Header: React.FC = () => {
