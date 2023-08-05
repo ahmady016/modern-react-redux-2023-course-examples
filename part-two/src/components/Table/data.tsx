@@ -1,3 +1,9 @@
+export type ColumnConfig = {
+    field: string
+    label: string
+    renderCell?: (item: Record<string, string>) => string | React.ReactNode
+    renderHeader?: () => string | React.ReactNode
+}
 
 type Employee = {
 	id: string
@@ -7,13 +13,29 @@ type Employee = {
 	job: string
 }
 export const employeeKey : (employee: Employee) => string = employee => employee.id
-export const employeeFields: Record<string, (employee: Employee) => string | React.ReactNode> = {
-	'id': employee => employee.id.slice(employee.id.lastIndexOf('-')+1),
-	'fullName' : employee => employee.fullName,
-	'gender': employee => employee.gender,
-	'email': employee => employee.email,
-	'job': employee => employee.job,
-}
+export const employeesConfig: ColumnConfig[] = [
+	{
+		field:'id',
+		label:'Id',
+		renderCell: (employee) => employee.id.slice(employee.id.lastIndexOf('-')+1)
+	},
+	{
+		field:'fullName',
+		label:'Full Name'
+	},
+	{
+		field: 'gender',
+		label: 'Gender',
+	},
+	{
+		field: 'email',
+		label: 'Email Address',
+	},
+	{
+		field: 'job',
+		label: 'Job Title',
+	}
+]
 export const employees: Employee[] = [
 	{
 		id: '70ebe05d-28ce-4f39-bfd5-73b16d0b58ce',
@@ -165,13 +187,30 @@ type Car = {
 	color: string
 }
 export const carKey : (car: Car) => string = car => car.id
-export const carFields: Record<string, (car: Car) => string | React.ReactNode> = {
-	'id': car => car.id.slice(car.id.lastIndexOf('-')+1),
-	'make': car => car.make,
-	'model': car => car.model,
-	'year': car => car.year,
-	'color': car => <div className={`m-2 p-3 bg-${car.color.toLocaleLowerCase()}-500`}></div>,
-}
+export const carsConfig : ColumnConfig[] = [
+	{
+		field: 'id',
+		label: 'Id',
+		renderCell: (car) => car.id.slice(car.id.lastIndexOf('-')+1)
+	},
+	{
+		field: 'make',
+		label:'Make ',
+	},
+	{
+		field: 'model',
+		label:'Model ',
+	},
+	{
+		field: 'year',
+		label:'Year ',
+	},
+	{
+		field: 'color',
+		label:'Color ',
+		renderCell: car => <div className={`m-2 p-3 bg-${car.color.toLocaleLowerCase()}-500`}></div>
+	}
+]
 export const cars: Car[] = [
 	{
 		id: '0ac15f64-5d5d-43c3-8da9-8e5ad41f5e3c',

@@ -1,23 +1,32 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { nanoid } from 'nanoid'
+import { ColumnConfig } from './data'
 
 type TableProps = {
     data: Record<string, string>[]
-    columns: Record<string, (item: Record<string, string>) => string | React.ReactNode>
+    columns: ColumnConfig[]
+    keyField?: string
     keyFn?: (item: Record<string, string>) => string
 }
-const Table : React.FC<TableProps> = ({ data, columns, keyFn }) => {
+const Table : React.FC<TableProps> = ({ data, columns, keyField, keyFn }) => {
 	return (
         <table className="table-auto border-spacing-2">
             <thead>
                 <tr className="border-b-2">
-                    {Object.keys(columns).map(key => <th key={key}>{key}</th>)}
+                    {columns.map(({ field, label, renderHeader }) => (
+                        renderHeader
+                            ? <Fragment key={field}>{renderHeader()}</Fragment>
+                            : <th key={field}>{label}</th>
+                    ))}
                 </tr>
             </thead>
             <tbody>
                 {data.map(item => (
-                    <tr className="border-b" key={keyFn ? keyFn(item) : item.id}>
-                        {Object.entries(columns).map(([key, value]) => (
-                            <td className="p-2" key={key}>{value(item)}</td>
+                    <tr className="border-b" key={keyFn ? keyFn(item) : keyField ? item[keyField] : nanoid()}>
+                        {columns.map(({ field, renderCell }) => (
+                            renderCell
+                                ? <Fragment key={field}>{renderCell(item)}</Fragment>
+                                : <td className="p-2" key={field}>{item[field]}</td>
                         ))}
                     </tr>
                 ))}
