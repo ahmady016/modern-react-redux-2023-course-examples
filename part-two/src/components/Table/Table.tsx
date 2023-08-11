@@ -1,13 +1,8 @@
 import React, { Fragment } from 'react'
 import { nanoid } from 'nanoid'
-import { ColumnConfig } from './data'
 
-type TableProps = {
-    data: Record<string, string>[]
-    columns: ColumnConfig[]
-    keyField?: string
-    keyFn?: (item: Record<string, string>) => string
-}
+import { TableProps } from './data'
+
 const Table : React.FC<TableProps> = ({ data, columns, keyField, keyFn }) => {
 	return (
         <table className="table-auto border-spacing-2">

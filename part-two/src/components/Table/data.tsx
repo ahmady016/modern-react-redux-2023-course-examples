@@ -1,8 +1,15 @@
 export type ColumnConfig = {
     field: string
     label: string
-    renderCell?: (item: Record<string, string>) => string | React.ReactNode
+    renderCell?: (item: Record<string, string | number>) => string | React.ReactNode
     renderHeader?: () => string | React.ReactNode
+	sortable?: boolean
+}
+export type TableProps = {
+    data: Record<string, string | number>[]
+    columns: ColumnConfig[]
+    keyField?: string
+    keyFn?: (item: Record<string, string | number>) => string
 }
 
 type Employee = {
@@ -17,7 +24,7 @@ export const employeesConfig: ColumnConfig[] = [
 	{
 		field:'id',
 		label:'Id',
-		renderCell: (employee) => employee.id.slice(employee.id.lastIndexOf('-')+1)
+		renderCell: (employee) => employee.id.toString().slice(employee.id.toString().lastIndexOf('-')+1)
 	},
 	{
 		field:'fullName',
@@ -183,7 +190,7 @@ type Car = {
 	id: string
 	make: string
 	model: string
-	year: string
+	year: number
 	color: string
 }
 export const carKey : (car: Car) => string = car => car.id
@@ -191,24 +198,29 @@ export const carsConfig : ColumnConfig[] = [
 	{
 		field: 'id',
 		label: 'Id',
-		renderCell: (car) => car.id.slice(car.id.lastIndexOf('-')+1)
+		renderCell: (car) => car.id.toString().slice(car.id.toString().lastIndexOf('-')+1),
+		sortable: true
 	},
 	{
 		field: 'make',
 		label:'Make ',
+		sortable: true,
 	},
 	{
 		field: 'model',
 		label:'Model ',
+		sortable: true,
 	},
 	{
 		field: 'year',
 		label:'Year ',
+		sortable: true,
 	},
 	{
 		field: 'color',
 		label:'Color ',
-		renderCell: car => <div className={`m-2 p-3 bg-${car.color.toLocaleLowerCase()}-500`}></div>
+		renderCell: car => <div className={`m-2 p-3 bg-${car.color.toString().toLocaleLowerCase()}-500`}></div>,
+		sortable: true,
 	}
 ]
 export const cars: Car[] = [
@@ -216,140 +228,140 @@ export const cars: Car[] = [
 		id: '0ac15f64-5d5d-43c3-8da9-8e5ad41f5e3c',
 		make: 'Chevrolet',
 		model: 'G-Series 2500',
-		year: '1997',
+		year: 1997,
 		color: 'Green',
 	},
 	{
 		id: '739ff45b-1ef2-4886-b765-4baaa86c4b24',
 		make: 'Mitsubishi',
 		model: 'Montero',
-		year: '1995',
+		year: 1995,
 		color: 'Red',
 	},
 	{
 		id: 'c14012dd-ba64-49a1-adfd-da104af0493e',
 		make: 'Mazda',
 		model: 'B2600',
-		year: '1989',
+		year: 1989,
 		color: 'Blue',
 	},
 	{
 		id: '54d033d9-f121-4d00-bf99-80aa5dbbe6c8',
 		make: 'Ford',
 		model: 'Thunderbird',
-		year: '1984',
+		year: 1984,
 		color: 'Yellow',
 	},
 	{
 		id: '5f282d97-1848-4901-9265-76a598204aae',
 		make: 'Mercedes-Benz',
 		model: 'CLS-Class',
-		year: '2006',
+		year: 2006,
 		color: 'Blue',
 	},
 	{
 		id: 'c84b3663-70dd-4d45-8c47-d0412f4201d0',
 		make: 'Chevrolet',
 		model: 'Tahoe',
-		year: '2012',
+		year: 2012,
 		color: 'Green',
 	},
 	{
 		id: '96469387-3c5e-4432-96f7-bcabaca3af10',
 		make: 'Chevrolet',
 		model: '1500',
-		year: '1995',
+		year: 1995,
 		color: 'Blue',
 	},
 	{
 		id: 'e950f299-f783-4add-a9d4-6086c72f829b',
 		make: 'Infiniti',
 		model: 'Q',
-		year: '1998',
+		year: 1998,
 		color: 'Green',
 	},
 	{
 		id: '049b3b24-93c6-442b-94f3-712968e281f0',
 		make: 'Ford',
 		model: 'F150',
-		year: '1992',
+		year: 1992,
 		color: 'Yellow',
 	},
 	{
 		id: 'a989c3aa-2c12-4aeb-9a90-fd2d170b8174',
 		make: 'Chevrolet',
 		model: 'Express 2500',
-		year: '2005',
+		year: 2005,
 		color: 'Red',
 	},
 	{
 		id: '3153688e-4c1a-4346-b9e6-1082137db861',
 		make: 'Lincoln',
 		model: 'Continental',
-		year: '1999',
+		year: 1999,
 		color: 'Blue',
 	},
 	{
 		id: '93ff32b9-123b-45c7-8ae8-fdf5ebe513ab',
 		make: 'Mazda',
 		model: 'MX-5',
-		year: '1995',
+		year: 1995,
 		color: 'Red',
 	},
 	{
 		id: '24d17697-d3ab-4a84-8071-069f095a2b6c',
 		make: 'Mercedes-Benz',
 		model: 'CLK-Class',
-		year: '2001',
+		year: 2001,
 		color: 'Yellow',
 	},
 	{
 		id: '1fa5ec68-91a5-4211-9c32-133b71b5f0e1',
 		make: 'Infiniti',
 		model: 'M',
-		year: '2011',
+		year: 2011,
 		color: 'Green',
 	},
 	{
 		id: '90776c83-c2e9-494c-bd5b-93127a4d6fcb',
 		make: 'Volkswagen',
 		model: 'Eurovan',
-		year: '1999',
+		year: 1999,
 		color: 'Red',
 	},
 	{
 		id: '9104a627-8664-4ccd-829c-0ecc64abcb0c',
 		make: 'GMC',
 		model: 'Jimmy',
-		year: '1993',
+		year: 1993,
 		color: 'Blue',
 	},
 	{
 		id: '64bcbe6f-cd38-4296-a8e9-f725c09bbeed',
 		make: 'Audi',
 		model: 'R8',
-		year: '2010',
+		year: 2010,
 		color: 'Yellow',
 	},
 	{
 		id: '0b94db9e-d23c-4d60-b907-618962ca125d',
 		make: 'Mazda',
 		model: 'Protege',
-		year: '1998',
+		year: 1998,
 		color: 'Green',
 	},
 	{
 		id: '722e4c6b-98ad-4070-8186-099805fa5dea',
 		make: 'Hyundai',
 		model: 'Tucson',
-		year: '2010',
+		year: 2010,
 		color: 'Blue',
 	},
 	{
 		id: 'f2d5b668-a8eb-494b-be66-6b900468d012',
 		make: 'Hyundai',
 		model: 'Genesis',
-		year: '2009',
+		year: 2009,
 		color: 'Red',
 	},
 ]
