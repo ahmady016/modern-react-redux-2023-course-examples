@@ -8,6 +8,7 @@ import AccordionPage from "./components/Accordion/AccordionPage"
 import DropdownPage from "./components/Dropdown/DropdownPage"
 import ModalPage from "./components/Modal/ModalPage"
 import TablePage from "./components/Table/TablePage"
+import CounterPage from "./components/Counter/CounterPage"
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="dropdown" 	element={<DropdownPage />} />
 					<Route path="modal" 	element={<ModalPage />} />
 					<Route path="table" 	element={<TablePage />} />
+					<Route path="counter" 	element={<CounterPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

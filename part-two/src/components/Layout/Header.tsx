@@ -7,12 +7,13 @@ const normalLinkClasses = "text-gray-900 dark:text-white dark:hover:bg-gray-700 
 const activeLinkClasses = "pb-1 border border-l-0 border-r-0 border-t-0 border-b-3 border-blue-300 font-bold text-blue-300 dark:text-blue-300 dark:hover:bg-gray-700 dark:hover:text-white"
 
 const navLinks : Record<string, string> = {
-    ".": "Home",
-    "button": "Button",
-    "accordion": "Accordion",
-    "dropdown": "Dropdown",
-    "modal": "Modal",
-    "table": "Table"
+    '.': 'Home',
+    'button': 'Button',
+    'accordion': 'Accordion',
+    'dropdown': 'Dropdown',
+    'modal': 'Modal',
+    'table': 'Table',
+    'counter': 'Counter'
 }
 
 const Header: React.FC = () => {
