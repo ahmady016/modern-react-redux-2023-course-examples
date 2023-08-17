@@ -1,7 +1,9 @@
 import React from 'react'
+import { produce } from 'immer'
 import { RxMinusCircled, RxPlusCircled } from 'react-icons/rx'
-import Button from '../Button/Button'
+
 import Panel from '../Dropdown/Panel'
+import Button from '../Button/Button'
 
 const INCREMENT_COUNT_BY_ONE = 'INCREMENT_COUNT_BY_ONE'
 const DECREMENT_COUNT_BY_ONE = 'DECREMENT_COUNT_BY_ONE'
@@ -20,30 +22,20 @@ type CounterAction = {
 const counterReducer : React.Reducer<CounterState, CounterAction> = (state, action) => {
     switch (action.type) {
         case INCREMENT_COUNT_BY_ONE:
-            return {
-                ...state,
-                countValue: state.countValue + 1
-            }
+            state.countValue = state.countValue + 1
+            return state
         case DECREMENT_COUNT_BY_ONE:
-            return {
-                ...state,
-                countValue: state.countValue - 1
-            }
+            state.countValue = state.countValue - 1
+            return state
         case SET_INPUT_VALUE:
-            return {
-                ...state,
-                inputValue: action.payload
-            }
+            state.inputValue = action.payload
+            return state
         case INCREMENT_COUNT_BY_VALUE:
-            return {
-                ...state,
-                countValue: state.countValue + state.inputValue
-            }
+            state.countValue = state.countValue + state.inputValue
+            return state
         case DECREMENT_COUNT_BY_VALUE:
-            return {
-                ...state,
-                countValue: state.countValue - state.inputValue
-            }
+            state.countValue = state.countValue - state.inputValue
+            return state
         default:
             return state
     }
@@ -53,7 +45,7 @@ type CounterProps = {
     initialValue: number
 }
 const Counter: React.FC<CounterProps> = ({ initialValue }) => {
-    const [{ countValue, inputValue }, dispatch] = React.useReducer(counterReducer, {
+    const [{ countValue, inputValue }, dispatch] = React.useReducer(produce(counterReducer), {
         countValue: initialValue,
         inputValue: 0
     })
