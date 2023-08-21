@@ -1,7 +1,21 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import AppLayout from "./features/Layout/AppLayout"
+import HomePage from "./features/Home/HomePage"
+import TasksPage from "./features/Tasks/TasksPage"
+import StorePage from "./features/Store/StorePage"
 
 function App() {
   return (
-    <h1 className="text-center text-3xl font-bold text-blue-700">Part Three</h1>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<AppLayout />}>
+					<Route index element={<HomePage />} />
+					<Route path="tasks" element={<TasksPage />} />
+					<Route path="store" element={<StorePage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
   )
 }
 
