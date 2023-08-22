@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
-import authorsReducer from './features/Home/authorsSlice'
-import booksReducer from './features/Home/booksSlice'
+import authorsReducer from './features/Home/Authors/authorsSlice'
+import booksReducer from './features/Home/Books/booksSlice'
 
 // configure the redux store
 const store = configureStore({
