@@ -3,13 +3,13 @@ import React from 'react'
 import BookForm from './BookForm'
 import BooksList from './BooksList'
 
-const Books: React.FC = () => {
+const BooksSection: React.FC = () => {
 	return (
-		<section>
+		<section className="grid lg:grid-cols-2 lg:gap-6">
 			<BookForm />
 			<BooksList />
 		</section>
 	)
 }
 
-export default Books
+export default BooksSection
