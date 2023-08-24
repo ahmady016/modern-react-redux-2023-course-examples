@@ -8,7 +8,7 @@ import { resetBooksAndAuthors } from '../../reduxActions'
 export type BookType = {
 	title: string
 	subtitle: string
-	publisher: number
+	publisher: string
 }
 // define the initial state
 const initialState: Record<string, BookType> = {}

@@ -1,19 +1,14 @@
 import React from 'react'
-import { ThunkDispatch, ActionCreatorWithPayload, AnyAction } from '@reduxjs/toolkit'
 import { GoTrash } from "react-icons/go"
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 
-import { BookType } from '../Books/booksSlice'
-import { selectAllAuthors, removeAuthor, AuthorType, AuthorWithIdType } from './authorsSlice'
-import { useAppDispatch, useAppSelector } from '../../../reduxStore'
+import { selectAllAuthors, removeAuthor, AuthorWithIdType } from './authorsSlice'
+import { DispatchType, useAppDispatch, useAppSelector } from '../../../reduxStore'
 
 import Button from '../../../components/Button'
 import Table from '../../../components/Table/Table'
 import { ColumnConfig } from '../../../components/Table/types'
 
-type DispatchType = ThunkDispatch<{
-	authors: Record<string, AuthorType>,
-	books: Record<string, BookType>
-}, undefined, AnyAction>
 type RemoveAuthorActionType = ActionCreatorWithPayload<string, "authors/removeAuthor">
 const authorsConfig = (dispatch : DispatchType, removeAuthor : RemoveAuthorActionType) : ColumnConfig[] => [
 	{
