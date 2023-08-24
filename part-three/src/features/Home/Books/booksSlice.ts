@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { nanoid } from 'nanoid'
 
+import { RootState } from '../../../reduxStore'
 import { resetBooksAndAuthors } from '../../reduxActions'
 
 // define a type for the slice state
-type BookType = {
+export type BookType = {
 	title: string
 	subtitle: string
 	publisher: number
@@ -28,6 +29,15 @@ export const booksSlice = createSlice({
 		builder.addCase(resetBooksAndAuthors, () => ({}))
 	},
 })
+
+// export some selectors
+export type BookWithIdType = BookType & { id: string }
+export const selectAllBooks = (state: RootState): BookWithIdType[] => {
+	const books = Object.entries(state.books)
+	return books.length > 0
+		? books.map(([key, value]) => ({ id: key, ...value }))
+		: []
+}
 
 // export the authors reducer and actions
 export const { createBook, removeBook } = booksSlice.actions
