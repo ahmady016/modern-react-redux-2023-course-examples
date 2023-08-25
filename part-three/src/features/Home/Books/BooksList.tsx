@@ -31,10 +31,11 @@ const booksConfig = (dispatch : DispatchType, removeBook : RemoveBookActionType)
 		field: 'action',
 		label: 'Action',
 		renderCell: (item) =>
-			<Button danger onClick={() => dispatch(removeBook((item as BookWithIdType).id))}>
-				<GoTrash />
-				<span>Remove</span>
-			</Button>
+			<div className="w-10 m-auto">
+				<Button className="py-2" danger rounded onClick={() => dispatch(removeBook((item as BookWithIdType).id))}>
+					<GoTrash />
+				</Button>
+			</div>
 	},
 ]
 

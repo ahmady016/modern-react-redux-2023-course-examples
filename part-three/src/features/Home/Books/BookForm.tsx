@@ -24,7 +24,7 @@ const BookForm : React.FC = () => {
 	}, [formState, dispatch])
 
 	return (
-		<div>
+		<div className="py-2 px-6 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300">
 			<h1 className="text-center text-2xl pb-3">Book Form</h1>
 			<form onSubmit={handleSubmit}>
 				<div className="relative z-0 w-full mb-6 group">
@@ -75,7 +75,9 @@ const BookForm : React.FC = () => {
 						onChange={handleInputChange}
 					/>
 				</div>
-				<Button primary>Add Book</Button>
+				<div className="w-1/3">
+					<Button className="py-3 rounded-md hover:bg-blue-700 hover:border-white hover:font-semibold" primary>Add Book</Button>
+				</div>
 			</form>
 		</div>
 	)

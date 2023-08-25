@@ -31,10 +31,11 @@ const authorsConfig = (dispatch : DispatchType, removeAuthor : RemoveAuthorActio
 		field: 'action',
 		label: 'Action',
 		renderCell: (item) =>
-			<Button danger onClick={() => dispatch(removeAuthor((item as AuthorWithIdType).id))}>
-				<GoTrash />
-				<span>Remove</span>
-			</Button>
+			<div className="w-10 m-auto">
+				<Button className="py-2" danger rounded onClick={() => dispatch(removeAuthor((item as AuthorWithIdType).id))}>
+					<GoTrash />
+				</Button>
+			</div>
 	},
 ]
 
