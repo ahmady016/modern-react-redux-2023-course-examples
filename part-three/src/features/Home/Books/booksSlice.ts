@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { nanoid } from 'nanoid'
 
-import { RootState } from '../../../reduxStore'
-import { resetBooksAndAuthors } from '../../reduxActions'
+import { RootState } from '../../../redux/store'
+import { resetBooksAndAuthors } from '../../../redux/actions'
 
 // define a type for the slice state
 export type BookType = {

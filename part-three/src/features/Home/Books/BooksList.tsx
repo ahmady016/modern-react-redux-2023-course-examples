@@ -2,7 +2,7 @@ import React from 'react'
 import { GoTrash } from 'react-icons/go'
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 
-import { DispatchType, useAppDispatch, useAppSelector } from '../../../reduxStore'
+import { DispatchType, useAppDispatch, useAppSelector } from '../../../redux/store'
 import { BookWithIdType, removeBook, selectAllBooks } from './booksSlice'
 
 import Button from '../../../components/Button'

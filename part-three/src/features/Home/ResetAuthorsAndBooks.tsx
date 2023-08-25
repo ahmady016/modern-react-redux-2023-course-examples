@@ -1,8 +1,8 @@
 import React from 'react'
 import { FcFullTrash } from 'react-icons/fc'
 
-import { useAppDispatch } from '../../reduxStore'
-import { resetBooksAndAuthors } from '../reduxActions'
+import { useAppDispatch } from '../../redux/store'
+import { resetBooksAndAuthors } from '../../redux/actions'
 
 import Button from '../../components/Button'
 

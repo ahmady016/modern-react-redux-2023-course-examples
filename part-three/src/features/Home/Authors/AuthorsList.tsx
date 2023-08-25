@@ -2,8 +2,8 @@ import React from 'react'
 import { GoTrash } from "react-icons/go"
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 
+import { DispatchType, useAppDispatch, useAppSelector } from '../../../redux/store'
 import { selectAllAuthors, removeAuthor, AuthorWithIdType } from './authorsSlice'
-import { DispatchType, useAppDispatch, useAppSelector } from '../../../reduxStore'
 
 import Button from '../../../components/Button'
 import Table from '../../../components/Table/Table'

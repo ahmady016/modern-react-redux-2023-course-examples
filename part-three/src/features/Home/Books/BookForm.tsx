@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useAppDispatch } from '../../../reduxStore'
+import { useAppDispatch } from '../../../redux/store'
 import { BookType, createBook } from './booksSlice'
 
 import Button from '../../../components/Button'

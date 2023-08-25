@@ -1,8 +1,8 @@
 import { AnyAction, ThunkDispatch, configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
-import authorsReducer, { AuthorType } from './features/Home/Authors/authorsSlice'
-import booksReducer, { BookType } from './features/Home/Books/booksSlice'
+import authorsReducer, { AuthorType } from '../features/Home/Authors/authorsSlice'
+import booksReducer, { BookType } from '../features/Home/Books/booksSlice'
 
 // configure the redux store
 const store = configureStore({
