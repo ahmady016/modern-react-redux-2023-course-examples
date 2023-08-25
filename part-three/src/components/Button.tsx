@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
     const { rounded, outline, primary, secondary, success, info, warning, danger, className, children, ...rest } = props
     const classes = classNames(className,
-        'flex justify-center items-center w-full px-3 py-2 border', {
+        'w-full border flex justify-center items-center', {
         'border-blue-500 bg-blue-500': primary,
         'border-gray-700 bg-gray-700': secondary,
         'border-green-500 bg-green-500': success,
