@@ -16,7 +16,13 @@ const MobilesList: React.FC = () => {
 			<div className="flow-root">
 				{mobiles.length > 0
 					? 	<ul role="list" className="divide-y divide-gray-200 hover:divide-gray-400 dark:divide-gray-700">
-							{mobiles.map(mobile => <MobileRow mobile={mobile} matchedIds={matchedIds} /> )}
+							{mobiles.map(mobile =>
+								<MobileRow
+									key={mobile.id}
+									mobile={mobile}
+									matchedIds={matchedIds}
+								/>
+							)}
 						</ul>
 					:	<p className="text-center p-3">There is no Mobiles right now</p>
 				}
