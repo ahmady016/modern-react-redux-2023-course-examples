@@ -1,7 +1,125 @@
 {
-    "resumes": [],
-    "tasks": [],
-    "courses": [],
-    "chapters": [],
-    "lessons": []
+  "resumes": [
+    {
+      "id": "beYoTHZR31",
+      "name": "Ahmed Hamdy Ali",
+      "title": "Full Stack Web Developer",
+      "bio": "Passionate to learn the latest programming technologies, Fast learner and love web development.",
+      "email": "ahmady09@gmail.com",
+      "mobile": "01143680055",
+      "birthDate": "1980-09-27",
+      "gender": "male",
+      "address": "Salah Salem St.",
+      "qualifications": [
+        "Arts, Sociology branch ",
+        "ICDL",
+        "MCSD",
+        "CCNA",
+        "CCNP"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JS",
+        "ReactJS",
+        "NodeJS",
+        "NestJS"
+      ],
+      "experiences": [
+        "Frontend Developer",
+        "Backend Developer",
+        "Full Stack Developer"
+      ]
+    },
+    {
+      "id": "TTdxNaxXLN",
+      "name": "Azza Ashry",
+      "title": ".NET Developer",
+      "bio": "Hard worker, Fast learner and love .NET programming",
+      "email": "azzaashry14@gmail.com",
+      "mobile": "01019074794",
+      "birthDate": "1991-06-06",
+      "gender": "female",
+      "address": "giza, cairo",
+      "qualifications": [
+        "CS Asuit",
+        "ICDL"
+      ],
+      "skills": [
+        "C#",
+        "ASP.NET Core",
+        "EF Core",
+        "MS SQL Server",
+        "ASP.NET Core MVC",
+        "ASP.NET Razor Pages"
+      ],
+      "experiences": [
+        "DAF (Digital Access to Finance)",
+        "Freelancer",
+        "ASGATech a Company",
+        "Higher Institute of Computer Science, Sohag"
+      ]
+    },
+    {
+      "id": "ucnHHjAKnN",
+      "name": "Ayman Gamal Ghazi",
+      "title": "Full stack .NET developer",
+      "bio": "My passion is to solve complex problems by designing computer software. I’m experienced at the creating back-end server apps, as well as front-end web apps",
+      "email": "aymanghazi2587@gmail.com",
+      "mobile": "01010359722",
+      "birthDate": "1996-09-11",
+      "gender": "male",
+      "address": "Cairo – Egypt",
+      "qualifications": [
+        "BACHELOR | 2018 | KAFR EL-SHEIKH UNIVERSITY GPA",
+        "ACADEMIC DIPLOMA | 2022 | CAIRO UNIVERSITY GPA"
+      ],
+      "skills": [
+        "C",
+        "C++",
+        "C#",
+        "JavaScript",
+        "Typescript",
+        "ASP.NET Core MVC",
+        "MS SQL Server",
+        "EF Core"
+      ],
+      "experiences": [
+        "FULL STACK DEVELOPER | IEEE HTI | 2020-NOW",
+        "VICE PRESEDENT | CAIRO UNIVERCITY | 2022-NOW",
+        "FULL STACK DEVELOPER |FREELANCE | 2018-2020"
+      ]
+    },
+    {
+      "id": "YsoI6aheAB",
+      "name": "Doaa Abdallah Mohamed",
+      "title": "Full Stack Web Developer",
+      "bio": "Passionate to learn the latest programming technologies, Fast learner and love web development.",
+      "email": " doaa.kalemon@gmail.com",
+      "mobile": "01148500138",
+      "birthDate": "1993-01-08",
+      "gender": "female",
+      "address": "Zaker Hessen Street, Nasr city, Cairo, Egypt",
+      "qualifications": [
+        "Ain Shams University, Egypt",
+        "ITI 3m Diploma"
+      ],
+      "skills": [
+        "JS",
+        "TS",
+        "NodeJS",
+        "MongoDb",
+        "AngularJS",
+        "MEAN Stack"
+      ],
+      "experiences": [
+        "Graduation project (DNA Cryptography and steganography)",
+        "Kalemon for Educational Production Software Developer"
+      ]
+    }
+  ],
+  "tasks": [],
+  "courses": [],
+  "chapters": [],
+  "lessons": []
 }
