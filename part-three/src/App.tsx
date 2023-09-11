@@ -4,7 +4,7 @@ import AppLayout from './features/Layout/AppLayout'
 import HomePage from './features/Home/HomePage'
 import MobilePage from './features/Mobiles/MobilePage'
 import ResumesPage from './features/Resumes/ResumesPage'
-import TasksPage from './features/Tasks/TasksPage'
+import CoursesPage from './features/Courses/CoursesPage'
 
 function App() {
 	return (
@@ -14,7 +14,7 @@ function App() {
 					<Route index element={<HomePage />} />
 					<Route path="mobiles" element={<MobilePage />} />
 					<Route path="resumes" element={<ResumesPage />} />
-					<Route path="tasks" element={<TasksPage />} />
+					<Route path="courses" element={<CoursesPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
