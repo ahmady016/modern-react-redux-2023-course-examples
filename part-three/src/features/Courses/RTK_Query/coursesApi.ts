@@ -6,8 +6,9 @@ export type Course = {
     id: string
     title: string
     description: string
-    students: number
+    imageUrl: string
     rate: number
+    students: number
     createdBy: string
     updatedAt: string
 }
