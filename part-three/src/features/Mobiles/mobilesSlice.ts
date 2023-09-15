@@ -107,7 +107,7 @@ export const mobilesSlice = createSlice({
 	}
 })
 
-// export the authors reducer and actions
+// export the mobiles reducer and actions
 export const { createMobile, removeMobile, setSearchQuery, setMatchedIds } = mobilesSlice.actions
 export default mobilesSlice.reducer
 
