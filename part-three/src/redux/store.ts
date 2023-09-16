@@ -6,6 +6,7 @@ import authorsReducer, { AuthorType } from '../features/Home/Authors/authorsSlic
 import booksReducer, { BookType } from '../features/Home/Books/booksSlice'
 import mobilesReducer, { MobileStateType } from '../features/Mobiles/mobilesSlice'
 import resumeReducer, { ResumeStateType } from '../features/Resumes/resumesSlice'
+import coursesReducer, { CourseState } from '../features/Courses/RTK_Query/coursesSlice'
 
 import { coursesApi, sectionsApi, lessonsApi } from '../features/Courses/RTK_Query'
 
@@ -16,6 +17,7 @@ const store = configureStore({
 		books: booksReducer,
 		mobiles: mobilesReducer,
 		resumes: resumeReducer,
+		courses: coursesReducer,
 		// add the generated reducer as a specific top-level slice
 		[coursesApi.reducerPath]: coursesApi.reducer,
 		[sectionsApi.reducerPath]: sectionsApi.reducer,
@@ -41,6 +43,7 @@ export type DispatchType = ThunkDispatch<
 		books: Record<string, BookType>
 		mobiles: MobileStateType
 		resumes: ResumeStateType
+		courses: CourseState
 	},
 	undefined,
 	AnyAction
