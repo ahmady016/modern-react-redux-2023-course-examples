@@ -11,7 +11,7 @@ const ResetAuthorsAndBooks: React.FC = () => {
     const handleReset = React.useCallback(() => void dispatch(resetBooksAndAuthors()), [dispatch])
 
 	return (
-        <div className="m-auto w-40">
+        <div className="w-40 m-auto">
             <Button className="py-3 hover:bg-red-500 hover:text-white" danger rounded outline onClick={handleReset}>
                 <FcFullTrash className="mr-2 text-2xl" />
                 <span>Reset All</span>
