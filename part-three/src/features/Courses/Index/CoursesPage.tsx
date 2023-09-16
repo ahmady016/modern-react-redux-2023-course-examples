@@ -5,9 +5,7 @@ import CoursesList from './CoursesList'
 
 const CoursesPage: React.FC = () => {
 	return (
-		<div>
-			<h2 className="text-center text-3xl font-bold">Latest Courses</h2>
-			<hr className="h-px my-8 bg-gray-300 border-0" />
+		<div className="w-full p-3">
 			<CourseForm />
 			<hr className="h-px my-8 bg-gray-300 border-0" />
 			<CourseSearchBar />

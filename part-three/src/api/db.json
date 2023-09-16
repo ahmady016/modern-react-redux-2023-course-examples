@@ -118,7 +118,30 @@
       ]
     }
   ],
-  "courses": [],
+  "courses": [
+    {
+      "id": "mbbZxTQgQ9",
+      "title": "The Complete JavaScript Course 2023: From Zero to Expert",
+      "description": "The modern JavaScript course for everyone! Master JavaScript with projects, challenges, and theory. Many courses in one!",
+      "imageUrl": "https://img-c.udemycdn.com/course/240x135/851712_fc61_6.jpg",
+      "rate": "4.6",
+      "students": "828202",
+      "createdBy": "Jonas Schmedtmann",
+      "updatedAt": "2023-06-01",
+      "price": 90
+    },
+    {
+      "id": "mQgv8TXftC",
+      "title": "JavaScript - The Complete Guide 2023 (Beginner + Advanced)",
+      "description": "Modern JavaScript from the beginning - all the way up to JS expert level! THE must-have JavaScript resource in 2023!!!!!!",
+      "imageUrl": "\thttps://img-c.udemycdn.com/course/240x135/2508942_11d3_3.jpg",
+      "rate": "4.6",
+      "students": "143438",
+      "createdBy": "Maximilian Schwarzmüller",
+      "updatedAt": "2023-07-01",
+      "price": 45
+    }
+  ],
   "sections": [],
   "lessons": []
 }

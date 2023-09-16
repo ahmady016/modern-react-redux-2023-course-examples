@@ -1,12 +1,18 @@
 import React from 'react'
 import { FiSearch } from 'react-icons/fi'
 
+import { useAppDispatch } from '../../../redux/store'
+import { setSearchQuery } from '../RTK_Query/coursesSlice'
+
 const CourseSearchBar: React.FC = () => {
     const [inputText, setInputText] = React.useState<string>('')
     const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => void setInputText(e.currentTarget.value), [])
-	const handleSubmit = React.useCallback((e: React.FormEvent<HTMLFormElement>) => {
+
+    const dispatch = useAppDispatch()
+    const handleSubmit = React.useCallback((e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-	}, [])
+        dispatch(setSearchQuery(inputText))
+	}, [dispatch, inputText])
 
     return (
 		<form onSubmit={handleSubmit} className="h-12 w-2/3 mx-auto my-0 p-0 flex items-center justify-center border rounded text-black bg-white font-sans">
