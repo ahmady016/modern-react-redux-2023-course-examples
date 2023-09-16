@@ -3,6 +3,7 @@ export type DeleteResponse = {
     success: boolean
 }
 
+export type { Course } from './coursesApi'
 export {
     coursesApi,
     useGetCoursesQuery,
@@ -13,6 +14,7 @@ export {
     useDeleteCourseMutation
 } from './coursesApi'
 
+export type { Section } from './sectionsApi'
 export {
     sectionsApi,
     useGetSectionsQuery,
@@ -22,6 +24,7 @@ export {
     useDeleteSectionMutation
 } from './sectionsApi'
 
+export type { Lesson } from './lessonsApi'
 export {
     lessonsApi,
     useGetLessonsQuery,

@@ -25,7 +25,6 @@ export const lessonsApi = createApi({
     endpoints: (builder) => ({
         getLessons: builder.query<Lesson[], string>({
             query: (sectionId: string) => ({ url: '/', params: { sectionId } }),
-            transformResponse: (response: { data: Lesson[] }) => response.data,
             providesTags: lessonsListTags,
         }),
         getLesson: builder.query<Lesson, string>({
@@ -34,20 +33,17 @@ export const lessonsApi = createApi({
         }),
         createLesson: builder.mutation<Lesson, Partial<Lesson>>({
             query: (newLesson) => ({ url: '/', method: 'POST', body: newLesson }),
-            transformResponse: (response: { data: Lesson }) => response.data,
             invalidatesTags: [{ type: LESSONS, id: 'LIST' }]
         }),
         updateLesson: builder.mutation<Lesson, Partial<Lesson> & Pick<Lesson,'id'>>({
             query: ({ id, ...updatedLesson }) => ({ url: `/${id}`, method: 'PATCH', body: updatedLesson }),
-            transformResponse: (response: { data: Lesson }) => response.data,
             invalidatesTags: (_, __, { id }) => {
                 const tag: TagDescription<"LESSONS"> = { type: LESSONS, id }
                 return [tag]
             },
         }),
         deleteLesson: builder.mutation<DeleteResponse, string>({
-            query: (id: string) => ({ url: `/${id}`}),
-            transformResponse: (response: { data: DeleteResponse }) => response.data,
+            query: (id: string) => ({ url: `/${id}`, method: 'DELETE' }),
             invalidatesTags: (_, __, id) => [{ type: LESSONS, id }],
         })
     })

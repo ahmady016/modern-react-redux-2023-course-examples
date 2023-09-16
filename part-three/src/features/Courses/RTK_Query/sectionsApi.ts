@@ -23,7 +23,6 @@ export const sectionsApi = createApi({
     endpoints: (builder) => ({
         getSections: builder.query<Section[], string>({
             query: (courseId: string) => ({ url: '/', params: { courseId } }),
-            transformResponse: (response: { data: Section[] }) => response.data,
             providesTags: sectionsListTags,
         }),
         getSection: builder.query<Section, string>({
@@ -32,20 +31,17 @@ export const sectionsApi = createApi({
         }),
         createSection: builder.mutation<Section, Partial<Section>>({
             query: (newSection) => ({ url: '/', method: 'POST', body: newSection }),
-            transformResponse: (response: { data: Section }) => response.data,
             invalidatesTags: [{ type: SECTIONS, id: 'LIST' }]
         }),
         updateSection: builder.mutation<Section, Partial<Section> & Pick<Section,'id'>>({
             query: ({ id, ...updatedSection }) => ({ url: `/${id}`, method: 'PATCH', body: updatedSection }),
-            transformResponse: (response: { data: Section }) => response.data,
             invalidatesTags: (_, __, { id }) => {
                 const tag: TagDescription<"SECTIONS"> = { type: SECTIONS, id }
                 return [tag]
             },
         }),
         deleteSection: builder.mutation<DeleteResponse, string>({
-            query: (id: string) => ({ url: `/${id}`}),
-            transformResponse: (response: { data: DeleteResponse }) => response.data,
+            query: (id: string) => ({ url: `/${id}`, method: 'DELETE' }),
             invalidatesTags: (_, __, id) => [{ type: SECTIONS, id }],
         })
     })

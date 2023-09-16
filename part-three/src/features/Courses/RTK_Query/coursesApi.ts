@@ -11,6 +11,7 @@ export type Course = {
     students: number
     createdBy: string
     updatedAt: string
+    price: number
 }
 
 function coursesListTags(result: Course[] | undefined) {
@@ -28,12 +29,10 @@ export const coursesApi = createApi({
     endpoints: (builder) => ({
         getCourses: builder.query<Course[], void>({
             query: () => ({ url: '/'}),
-            transformResponse: (response: { data: Course[] }) => response.data,
             providesTags: coursesListTags,
         }),
         searchCourses: builder.query<Course[], string>({
             query: (q: string) => ({ url: '/', params: { q }}),
-            transformResponse: (response: { data: Course[] }) => response.data,
             providesTags: coursesListTags,
         }),
         getCourse: builder.query<Course, string>({
@@ -42,20 +41,17 @@ export const coursesApi = createApi({
         }),
         createCourse: builder.mutation<Course, Partial<Course>>({
             query: (newCourse) => ({ url: '/', method: 'POST', body: newCourse }),
-            transformResponse: (response: { data: Course }) => response.data,
             invalidatesTags: [{ type: COURSES, id: 'LIST' }]
         }),
         updateCourse: builder.mutation<Course, Partial<Course> & Pick<Course,'id'>>({
             query: ({ id, ...updatedCourse }) => ({ url: `/${id}`, method: 'PATCH', body: updatedCourse }),
-            transformResponse: (response: { data: Course }) => response.data,
             invalidatesTags: (_, __, { id }) => {
                 const tag: TagDescription<"COURSES"> = { type: COURSES, id }
                 return [tag]
             },
         }),
         deleteCourse: builder.mutation<DeleteResponse, string>({
-            query: (id: string) => ({ url: `/${id}`}),
-            transformResponse: (response: { data: DeleteResponse }) => response.data,
+            query: (id: string) => ({ url: `/${id}`, method: 'DELETE' }),
             invalidatesTags: (_, __, id) => [{ type: COURSES, id }],
         })
     })
