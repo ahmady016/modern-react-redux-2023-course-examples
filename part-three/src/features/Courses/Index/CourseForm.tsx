@@ -8,14 +8,15 @@ import {
     Course,
     useGetCourseQuery,
     useCreateCourseMutation,
-    useUpdateCourseMutation
+    useUpdateCourseMutation,
+    getErrorMessage
 } from '../RTK_Query'
 
 import Button from '../../../components/Button'
 import Spinner from '../../../components/Spinner'
 
 const emptyCourse : Course = {
-    id: nanoid(10),
+    id: '',
     title: '',
     description: '',
     imageUrl: '',
@@ -25,8 +26,9 @@ const emptyCourse : Course = {
     updatedAt: '',
     price: 0
 }
+const getNewEmptyCourse = () => ({ ...emptyCourse, id: nanoid(10) })
 const CourseForm: React.FC = () => {
-    const [formState, setFormState] = React.useState<Course>({ ...emptyCourse })
+    const [formState, setFormState] = React.useState<Course>(getNewEmptyCourse())
     const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormState(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
     }, [])
@@ -35,7 +37,7 @@ const CourseForm: React.FC = () => {
     const getCourseQuery = useGetCourseQuery(courseId, { skip: Boolean(!courseId) })
     React.useEffect(() => {
         if(!courseId)
-            setFormState({ ...emptyCourse })
+            setFormState(getNewEmptyCourse())
         else if(getCourseQuery.data)
             setFormState(getCourseQuery.data)
 	}, [courseId, getCourseQuery])
@@ -50,7 +52,7 @@ const CourseForm: React.FC = () => {
             dispatch(setCourseId(''))
         } else {
             createCourse(formState)
-            setFormState({ ...emptyCourse })
+            setFormState(getNewEmptyCourse())
         }
 	}, [formState, createCourse, updateCourse])
 
@@ -58,7 +60,7 @@ const CourseForm: React.FC = () => {
         <fieldset className="p-5 rounded-md border border-solid border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400">
             <legend className="w-fit px-3 text-xl">Create New Course</legend>
             {getCourseQuery.isFetching && <Spinner size={10} align="center" />}
-            {getCourseQuery.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">{getCourseQuery.error.toString()}</p>}
+            {getCourseQuery.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">{getErrorMessage(getCourseQuery.error)}</p>}
             <form onSubmit={handleSubmit}>
 				<div className="grid grid-cols-8 gap-4">
                     {/* first row */}
@@ -165,9 +167,9 @@ const CourseForm: React.FC = () => {
                             }
                         </Button>
                     </div>
-                    <div>
-                        {createCourseResult.isError && <p className="mt-3 p-3 bg-red-200 text-red-800">{createCourseResult.error.toString()}</p>}
-                        {updateCourseResult.isError && <p className="mt-3 p-3 bg-red-200 text-red-800">{updateCourseResult.error.toString()}</p>}
+                    <div className="col-span-8">
+                        {createCourseResult.isError && <p className="mt-3 p-3 bg-red-200 text-red-800">{getErrorMessage(createCourseResult.error)}</p>}
+                        {updateCourseResult.isError && <p className="mt-3 p-3 bg-red-200 text-red-800">{getErrorMessage(updateCourseResult.error)}</p>}
                     </div>
 				</div>
 			</form>

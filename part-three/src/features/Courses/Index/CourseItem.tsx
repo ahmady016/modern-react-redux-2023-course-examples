@@ -1,15 +1,14 @@
 import React from 'react'
 import { FiEdit, FiX } from 'react-icons/fi'
 
-import { Course, useDeleteCourseMutation } from '../RTK_Query'
+import { Course, getErrorMessage, useDeleteCourseMutation } from '../RTK_Query'
 import { useAppDispatch } from '../../../redux/store'
 import { setCourseId } from '../RTK_Query/coursesSlice'
 
 import Spinner from '../../../components/Spinner'
+import { Link } from 'react-router-dom'
 
-const CourseItem: React.FC<Course> = ({
-	id, title, description, imageUrl, createdBy, updatedAt
-}) => {
+const CourseItem: React.FC<Course> = ({ id, title, description, imageUrl, createdBy }) => {
 	const [deleteCourse, deleteCourseResult] = useDeleteCourseMutation()
 	const handleRemove = React.useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		deleteCourse(e.currentTarget.id)
@@ -24,15 +23,14 @@ const CourseItem: React.FC<Course> = ({
 		<li className="py-3 sm:py-4">
 			<div className="flex justify-around items-center space-x-4">
 				<div className="flex-shrink-0">
-					<img className="w-12 h-12 rounded-full" src={imageUrl} alt={title} />
+					<img className="w-16 h-16 rounded-full" src={imageUrl} alt={title} />
 				</div>
 				<div className="flex-1">
-					<p className="text-sm text-gray-900 truncate dark:text-white font-medium">{title}</p>
+					<p className="text-lg text-gray-900 hover:text-blue-900 hover:underline dark:text-white"><Link to={`./${id}`}>{title}</Link></p>
 					<p className="text-sm text-gray-500 truncate dark:text-gray-400">{description}</p>
 				</div>
-				<div className="flex-grow flex items-center justify-around text-base text-gray-900 dark:text-white font-medium">
+				<div className="flex-grow flex justify-end items-center font-medium text-base text-gray-900 dark:text-white">
 					<p>{createdBy}</p>
-					<p>{updatedAt}</p>
 				</div>
 				<div className="flex justify-between items-center space-x-2">
 					<button
@@ -55,7 +53,7 @@ const CourseItem: React.FC<Course> = ({
 						}
 					</button>
 				</div>
-				{deleteCourseResult.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">deleteCourseResult.error.toString()</p>}
+				{deleteCourseResult.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">{getErrorMessage(deleteCourseResult.error)}</p>}
 			</div>
 		</li>
 	)

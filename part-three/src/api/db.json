@@ -128,7 +128,7 @@
       "students": "828202",
       "createdBy": "Jonas Schmedtmann",
       "updatedAt": "2023-06-01",
-      "price": 90
+      "price": "90"
     },
     {
       "id": "mQgv8TXftC",
@@ -139,7 +139,40 @@
       "students": "143438",
       "createdBy": "Maximilian Schwarzmüller",
       "updatedAt": "2023-07-01",
-      "price": 45
+      "price": "45"
+    },
+    {
+      "id": "k_OnIEdvYi",
+      "title": "The Ultimate React Course 2023: React, Redux & More",
+      "description": "Master modern React from beginner to advanced! Context API, React Query, Redux Toolkit, Tailwind, advanced patterns",
+      "imageUrl": "https://img-c.udemycdn.com/course/240x135/4471614_361e_5.jpg",
+      "rate": "4.8",
+      "students": "41854",
+      "createdBy": "Jonas Schmedtmann",
+      "updatedAt": "2023-07-01",
+      "price": "30"
+    },
+    {
+      "id": "ED7aw8GvLD",
+      "title": "React 18 Tutorial and Projects Course (2023)",
+      "description": "Hands-on React: Create 25+ Projects. Includes Axios, Router 6, Query 4, Redux Toolkit and RTK Query",
+      "imageUrl": "https://img-c.udemycdn.com/course/240x135/2018828_41a9_3.jpg",
+      "rate": "4.7",
+      "students": "60010",
+      "createdBy": "John Smilga",
+      "updatedAt": "2023-09-01",
+      "price": "90"
+    },
+    {
+      "id": "TvA1wTw3_f",
+      "title": "Modern React with Redux [2023 Update]",
+      "description": "Master React and Redux Toolkit. Includes RTK Query, tons of custom hooks, and more! Course 100% Updated November 2022",
+      "imageUrl": "https://img-c.udemycdn.com/course/240x135/705264_caa9_13.jpg",
+      "rate": "4.7",
+      "students": "307220",
+      "createdBy": "Stephen Grider",
+      "updatedAt": "2023-08-01",
+      "price": "130"
     }
   ],
   "sections": [],
