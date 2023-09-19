@@ -175,6 +175,135 @@
       "price": "130"
     }
   ],
-  "sections": [],
-  "lessons": []
+  "sections": [
+    {
+      "id": "1zbfWHkhpW",
+      "title": "Let's Dive In!",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "pstPMODB1C",
+      "title": "Creating Content with JSX",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "AgUlUyEIhD",
+      "title": "Building with Reusable Components",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "1JUVXHxuVx",
+      "title": "State: How to Change Your App",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "80NwTqKjak",
+      "title": "Using an API with React",
+      "courseId": "TvA1wTw3_f"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "37p89EFwdX",
+      "title": "How to Get Help",
+      "length": "01:01",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "p4TdQpfKeK",
+      "title": "Let's Build an App!",
+      "length": "07:56",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "LafvX1G2y1",
+      "title": "Critical Questions",
+      "length": "05:49",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "T3ZNmIjiyE",
+      "title": "A Few More Critical Questions",
+      "length": "08:51",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "_cTNhFTm29",
+      "title": "Node Setup",
+      "length": "01:58",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "ADquYPVdJs",
+      "title": "Creating a React Project",
+      "length": "02:38",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "WPXzR1N2Ty",
+      "title": "What is Create React App?",
+      "length": "05:50",
+      "sectionId": "1zbfWHkhpW"
+    },
+    {
+      "id": "_RgrSmOPH2",
+      "title": "Showing Basic Content",
+      "length": "06:41",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "qSp8t5EkPc",
+      "title": "What is JSX?",
+      "length": "05:48",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": " y670YLFm6q",
+      "title": "Printing JavaScript Variables in JSX",
+      "length": "04:29",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "XqYazGmnEd",
+      "title": "Shorthand JS Expressions",
+      "length": "01:51",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "x69wJqtf5i",
+      "title": "Typical Component Layouts",
+      "length": "01:58",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "tcJzG0RUFE",
+      "title": "Customizing Elements with Props",
+      "length": "07:36",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "VYJMIU5FSw",
+      "title": "Converting HTML to JSX",
+      "length": "05:07",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "yYZfZHdjxi",
+      "title": "Applying Styling in JSX",
+      "length": "06:13",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "Cw1f3oF6WM",
+      "title": "Extracting Components",
+      "length": "04:26",
+      "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "kAuwNWNQoN",
+      "title": "Module Systems Overview",
+      "length": "16:05",
+      "sectionId": "pstPMODB1C"
+    }
+  ]
 }
