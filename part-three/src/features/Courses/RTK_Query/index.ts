@@ -17,22 +17,24 @@ export type DeleteResponse = {
     success: boolean
 }
 
-export type { Course } from './coursesApi'
+export type { Course, CourseWithSections } from './coursesApi'
 export {
     coursesApi,
     useGetCoursesQuery,
     useSearchCoursesQuery,
     useGetCourseQuery,
+    useGetCourseWithSectionsQuery,
     useCreateCourseMutation,
     useUpdateCourseMutation,
     useDeleteCourseMutation
 } from './coursesApi'
 
-export type { Section } from './sectionsApi'
+export type { Section, SectionWithLessons } from './sectionsApi'
 export {
     sectionsApi,
     useGetSectionsQuery,
     useGetSectionQuery,
+    useGetSectionWithLessonsQuery,
     useCreateSectionMutation,
     useUpdateSectionMutation,
     useDeleteSectionMutation

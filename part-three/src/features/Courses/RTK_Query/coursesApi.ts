@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery, TagDescription } from '@reduxjs/toolkit/query/react'
-import { DeleteResponse } from '.'
+import { DeleteResponse, Section } from '.'
 
 const COURSES = 'COURSES'
 export type Course = {
@@ -12,6 +12,9 @@ export type Course = {
     createdBy: string
     updatedAt: string
     price: number
+}
+export type CourseWithSections = Course & {
+    sections: Section[]
 }
 
 function coursesListTags(result: Course[] | undefined) {
@@ -39,6 +42,10 @@ export const coursesApi = createApi({
             query: (id: string) => ({ url: `/${id}`}),
             providesTags: (_, __, id) => [{ type: COURSES, id }],
         }),
+        getCourseWithSections: builder.query<CourseWithSections, string>({
+            query: (id: string) => ({ url: `/${id}?_embed=sections`}),
+            providesTags: (_, __, id) => [{ type: COURSES, id }],
+        }),
         createCourse: builder.mutation<Course, Partial<Course>>({
             query: (newCourse) => ({ url: '/', method: 'POST', body: newCourse }),
             invalidatesTags: [{ type: COURSES, id: 'LIST' }]
@@ -61,6 +68,7 @@ export const {
     useGetCoursesQuery,
     useSearchCoursesQuery,
     useGetCourseQuery,
+    useGetCourseWithSectionsQuery,
     useCreateCourseMutation,
     useUpdateCourseMutation,
     useDeleteCourseMutation

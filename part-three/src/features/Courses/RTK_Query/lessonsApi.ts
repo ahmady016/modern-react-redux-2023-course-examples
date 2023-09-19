@@ -5,7 +5,7 @@ const LESSONS = 'LESSONS'
 export type Lesson = {
     id: string
     title: string
-    length: number
+    length: string
     sectionId: string
 }
 

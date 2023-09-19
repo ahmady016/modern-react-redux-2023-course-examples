@@ -1,11 +1,14 @@
 import { TagDescription, createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
-import { DeleteResponse } from "."
+import { DeleteResponse, Lesson } from "."
 
 const SECTIONS = 'SECTIONS'
 export type Section = {
     id: string
     title: string
     courseId: string
+}
+export type SectionWithLessons = Section & {
+    lessons: Lesson[]
 }
 
 function sectionsListTags(result: Section[] | undefined) {
@@ -22,11 +25,15 @@ export const sectionsApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/sections' }),
     endpoints: (builder) => ({
         getSections: builder.query<Section[], string>({
-            query: (courseId: string) => ({ url: '/', params: { courseId } }),
+            query: (courseId: string) => ({ url: '', params: { courseId } }),
             providesTags: sectionsListTags,
         }),
         getSection: builder.query<Section, string>({
             query: (id: string) => ({ url: `/${id}`}),
+            providesTags: (_, __, id) => [{ type: SECTIONS, id }],
+        }),
+        getSectionWithLessons: builder.query<SectionWithLessons, string>({
+            query: (id: string) => ({ url: `/${id}?_embed=lessons` }),
             providesTags: (_, __, id) => [{ type: SECTIONS, id }],
         }),
         createSection: builder.mutation<Section, Partial<Section>>({
@@ -50,6 +57,7 @@ export const sectionsApi = createApi({
 export const {
     useGetSectionsQuery,
     useGetSectionQuery,
+    useGetSectionWithLessonsQuery,
     useCreateSectionMutation,
     useUpdateSectionMutation,
     useDeleteSectionMutation
