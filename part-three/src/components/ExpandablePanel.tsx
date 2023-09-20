@@ -10,7 +10,7 @@ const ExpandablePanel: React.FC<ExpandablePanelProps> = ({ header, children }) =
     const toggleExpanded = React.useCallback(() => setExpanded(expanded => !expanded), [])
 
 	return (
-        <div className="mb-2 border rounded bg-gray-200 hover:bg-gray-300">
+        <div className="mb-2 border rounded bg-gray-200 hover:bg-gray-300 divide-x divide-white">
             <div className="p-2 flex justify-between items-center cursor-pointer">
                 <div className="flex flex-row justify-between items-center">
                     {header}

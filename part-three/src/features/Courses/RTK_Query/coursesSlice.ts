@@ -5,11 +5,15 @@ import { RootState } from "../../../redux/store"
 export type CourseState = {
     searchQuery: string
     courseId: string
+    sectionId: string
+    lessonId: string
 }
 // define the initial state
 const initialState : CourseState = {
     searchQuery: '',
-    courseId: ''
+    courseId: '',
+    sectionId: '',
+    lessonId: '',
 }
 // define the courses slice
 export const coursesSlice = createSlice({
@@ -21,14 +25,22 @@ export const coursesSlice = createSlice({
         },
 		setCourseId(state, action: PayloadAction<string>) {
 			state.courseId = action.payload
+		},
+		setSectionId(state, action: PayloadAction<string>) {
+			state.sectionId = action.payload
+		},
+		setLessonId(state, action: PayloadAction<string>) {
+			state.lessonId = action.payload
 		}
     }
 })
 
 // export the courses reducer and actions
-export const { setSearchQuery, setCourseId } = coursesSlice.actions
+export const { setSearchQuery, setCourseId, setSectionId, setLessonId } = coursesSlice.actions
 export default coursesSlice.reducer
 
 // export some selectors
 export const selectSearchQuery = (state: RootState): string => state.courses.searchQuery
 export const selectCourseId = (state: RootState): string => state.courses.courseId
+export const selectSectionId = (state: RootState): string => state.courses.sectionId
+export const selectLessonId = (state: RootState): string => state.courses.lessonId
