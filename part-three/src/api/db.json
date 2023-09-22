@@ -200,6 +200,21 @@
       "id": "80NwTqKjak",
       "title": "Using an API with React",
       "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "WPeXt7EKTV",
+      "title": "How to Handle Forms",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "RKenRoHONY",
+      "title": "Data Persistence with API Requests",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "CYUXkJQB_o",
+      "title": "Communication Using the Context System",
+      "courseId": "TvA1wTw3_f"
     }
   ],
   "lessons": [
@@ -304,6 +319,42 @@
       "title": "Module Systems Overview",
       "length": "16:05",
       "sectionId": "pstPMODB1C"
+    },
+    {
+      "id": "4Zq-UlEYIU",
+      "title": "Project Overview",
+      "length": "05:37",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "bwvuZoOy62",
+      "title": "Creating Core Components",
+      "length": "05:00",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "wjtXC2fBKA",
+      "title": "Introducing the Props System",
+      "length": "04:51",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "D0-WjRekxP",
+      "title": "Picturing the Movement of Data",
+      "length": "06:06",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "BOfaXwcQD0",
+      "title": "Adding Props",
+      "length": "03:04",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "HsEfE-i9PB",
+      "title": "Using Argument Destructuring",
+      "length": "04:57",
+      "sectionId": "AgUlUyEIhD"
     }
   ]
 }

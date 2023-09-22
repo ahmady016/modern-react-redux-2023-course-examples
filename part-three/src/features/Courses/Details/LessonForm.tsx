@@ -15,15 +15,12 @@ import {
 import Button from '../../../components/Button'
 import Spinner from '../../../components/Spinner'
 
-const emptyLesson : Lesson = {
-    id: '',
-    title: '',
-    length: '',
-	sectionId: ''
+const getNewEmptyLesson = (sectionId: string) => ({ id: nanoid(10), title: '',  length: '', sectionId }) as Lesson
+type LessonFormProps = {
+	sectionId: string
 }
-const getNewEmptyLesson = () => ({ ...emptyLesson, id: nanoid(10) })
-const LessonForm: React.FC = () => {
-	const [formState, setFormState] = React.useState<Lesson>(getNewEmptyLesson())
+const LessonForm: React.FC<LessonFormProps> = ({ sectionId }) => {
+	const [formState, setFormState] = React.useState<Lesson>(getNewEmptyLesson(sectionId))
     const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormState(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
     }, [])
@@ -32,7 +29,7 @@ const LessonForm: React.FC = () => {
     const getLessonQuery = useGetLessonQuery(lessonId, { skip: Boolean(!lessonId) })
     React.useEffect(() => {
         if(!lessonId)
-            setFormState(getNewEmptyLesson())
+            setFormState(getNewEmptyLesson(sectionId))
         else if(getLessonQuery.data)
             setFormState(getLessonQuery.data)
 	}, [lessonId, getLessonQuery])
@@ -47,13 +44,13 @@ const LessonForm: React.FC = () => {
             dispatch(setLessonId(''))
         } else {
             createLesson(formState)
-            setFormState(getNewEmptyLesson())
+            setFormState(getNewEmptyLesson(sectionId))
         }
 	}, [formState, createLesson, updateLesson])
 
 	return (
-        <fieldset className="p-5 rounded-md border border-solid border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400">
-            <legend className="w-fit px-3 text-xl">{getLessonQuery.data ? "Update Existing Lesson" : "Create New Lesson"}</legend>
+        <fieldset className="mt-2 mb-3 mx-6 p-5 rounded-md border border-solid border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400">
+            <legend className="w-fit px-3 text-xl">{lessonId ? "Update Existing Lesson" : "Create New Lesson"}</legend>
             {getLessonQuery.isFetching && <Spinner size={10} align="center" />}
             {getLessonQuery.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">{getErrorMessage(getLessonQuery.error)}</p>}
             <form onSubmit={handleSubmit}>
@@ -73,7 +70,7 @@ const LessonForm: React.FC = () => {
 						<label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="length">Length</label>
 						<input
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-							type="number"
+							type="text"
 							id="length"
 							name="length"
 							value={formState.length}
@@ -88,7 +85,7 @@ const LessonForm: React.FC = () => {
 						>
 							{createLessonResult.isLoading || updateLessonResult.isLoading
 								? <Spinner size={4} align='left' />
-								: (getLessonQuery.data)
+								: (lessonId)
 									? "Update Lesson"
 									: "Add Lesson"
 							}

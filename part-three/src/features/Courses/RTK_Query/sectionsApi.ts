@@ -38,7 +38,10 @@ export const sectionsApi = createApi({
         }),
         createSection: builder.mutation<Section, Partial<Section>>({
             query: (newSection) => ({ url: '/', method: 'POST', body: newSection }),
-            invalidatesTags: [{ type: SECTIONS, id: 'LIST' }]
+            invalidatesTags: (_, __, { courseId }) => {
+                const tag: TagDescription<"SECTIONS"> = { type: SECTIONS, id: courseId }
+                return [tag]
+            }
         }),
         updateSection: builder.mutation<Section, Partial<Section> & Pick<Section,'id'>>({
             query: ({ id, ...updatedSection }) => ({ url: `/${id}`, method: 'PATCH', body: updatedSection }),

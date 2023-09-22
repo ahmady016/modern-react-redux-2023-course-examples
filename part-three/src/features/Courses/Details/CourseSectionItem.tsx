@@ -6,7 +6,9 @@ import { setSectionId } from '../RTK_Query/coursesSlice'
 import { Section, getErrorMessage, useDeleteSectionMutation } from '../RTK_Query'
 
 import Spinner from '../../../components/Spinner'
+
 import ExpandablePanel from '../../../components/ExpandablePanel'
+import LessonForm from './LessonForm'
 import CourseLessonsList from './CourseLessonsList'
 
 const CourseSectionItem: React.FC<Section> = ({ id, title }) => {
@@ -50,6 +52,7 @@ const CourseSectionItem: React.FC<Section> = ({ id, title }) => {
 	return (
         <li>
             <ExpandablePanel header={header}>
+                <LessonForm sectionId={id} />
                 <CourseLessonsList sectionId={id} />
             </ExpandablePanel>
         </li>

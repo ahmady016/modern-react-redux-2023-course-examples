@@ -24,7 +24,7 @@ export const lessonsApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/lessons' }),
     endpoints: (builder) => ({
         getLessons: builder.query<Lesson[], string>({
-            query: (sectionId: string) => ({ url: '/', params: { sectionId } }),
+            query: (sectionId: string) => ({ url: '', params: { sectionId } }),
             providesTags: lessonsListTags,
         }),
         getLesson: builder.query<Lesson, string>({
@@ -33,7 +33,10 @@ export const lessonsApi = createApi({
         }),
         createLesson: builder.mutation<Lesson, Partial<Lesson>>({
             query: (newLesson) => ({ url: '/', method: 'POST', body: newLesson }),
-            invalidatesTags: [{ type: LESSONS, id: 'LIST' }]
+            invalidatesTags: (_, __, { sectionId }) => {
+                const tag: TagDescription<"LESSONS"> = { type: LESSONS, id: sectionId }
+                return [tag]
+            }
         }),
         updateLesson: builder.mutation<Lesson, Partial<Lesson> & Pick<Lesson,'id'>>({
             query: ({ id, ...updatedLesson }) => ({ url: `/${id}`, method: 'PATCH', body: updatedLesson }),
