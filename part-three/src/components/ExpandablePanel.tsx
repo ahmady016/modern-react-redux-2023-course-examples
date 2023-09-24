@@ -11,11 +11,11 @@ const ExpandablePanel: React.FC<ExpandablePanelProps> = ({ header, children }) =
 
 	return (
         <div className="mb-2 border rounded bg-gray-200 hover:bg-gray-300 divide-x divide-white">
-            <div className="p-2 flex justify-between items-center cursor-pointer">
-                <div className="flex flex-row justify-between items-center">
+            <div className="p-2 flex justify-between items-center">
+                <div className=" flex-grow flex justify-between items-center">
                     {header}
                 </div>
-                <div className="mr-1 p-1 rounded-full bg-gray-100" onClick={toggleExpanded}>
+                <div className="mr-1 p-1 rounded-full bg-gray-100 cursor-pointer" onClick={toggleExpanded}>
                     {expanded ? <FcExpand /> : <FcPrevious />}
                 </div>
             </div>
