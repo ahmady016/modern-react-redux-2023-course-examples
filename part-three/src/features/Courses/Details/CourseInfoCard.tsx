@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useAppSelector } from '../../../redux/store'
+import { selectCourseStats } from '../RTK_Query/coursesSlice'
 import { getErrorMessage, useGetCourseQuery } from '../RTK_Query'
 
 import Spinner from '../../../components/Spinner'
@@ -9,6 +11,8 @@ type CourseInfoCardProps = {
 }
 const CourseInfoCard: React.FC<CourseInfoCardProps> = ({ courseId }) => {
 	const { isFetching, isError, error, data: course } = useGetCourseQuery(courseId, { skip: Boolean(!courseId) })
+
+	const courseStats = useAppSelector(selectCourseStats(courseId))
 
 	if(isFetching)
 		return <div className="mt-12"><Spinner align='center' size={12} /></div>
@@ -43,6 +47,13 @@ const CourseInfoCard: React.FC<CourseInfoCardProps> = ({ courseId }) => {
 							<span className="text-lg">{course.updatedAt}</span>
 						</p>
 					</div>
+					{courseStats &&
+						<div className="mt-4 text-gray-500">
+							<span>{courseStats.totalSections} Sections</span>
+							<span> | {courseStats.totalLessons} Lessons</span>
+							<span> | {courseStats.totalDuration} Total Duration</span>
+						</div>
+					}
 				</div>
 			</section>
 		)

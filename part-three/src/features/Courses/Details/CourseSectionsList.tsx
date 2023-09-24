@@ -20,7 +20,7 @@ const CourseSectionsList: React.FC<CourseSectionsListProps> = ({ courseId }) => 
 
 	if(!isFetching && !isError && sections!.length > 0)
 		return (
-			<ul className="w-4/6 m-auto">
+			<ul className="w-5/6 m-auto">
 				{sections!.map(section => <CourseSectionItem key={section.id} {...section} />)}
 			</ul>
 		)

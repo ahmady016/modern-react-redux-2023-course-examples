@@ -1,9 +1,10 @@
 import React from 'react'
 import { FiEdit, FiTrash2 } from 'react-icons/fi'
 
-import { useAppDispatch } from '../../../redux/store'
-import { setSectionId } from '../RTK_Query/coursesSlice'
+import { useAppDispatch, useAppSelector } from '../../../redux/store'
+import { selectSectionStats, setSectionId } from '../RTK_Query/coursesSlice'
 import { Section, getErrorMessage, useDeleteSectionMutation } from '../RTK_Query'
+import { toDuration } from '../timeUtils'
 
 import Spinner from '../../../components/Spinner'
 
@@ -11,7 +12,7 @@ import ExpandablePanel from '../../../components/ExpandablePanel'
 import LessonForm from './LessonForm'
 import CourseLessonsList from './CourseLessonsList'
 
-const CourseSectionItem: React.FC<Section> = ({ id, title }) => {
+const CourseSectionItem: React.FC<Section> = ({ id, title, courseId }) => {
     const [ deleteSection, deleteSectionResult ] = useDeleteSectionMutation()
     const handleRemove = React.useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		deleteSection(e.currentTarget.id)
@@ -21,6 +22,8 @@ const CourseSectionItem: React.FC<Section> = ({ id, title }) => {
 	const handleEditSection = React.useCallback((e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		dispatch(setSectionId(e.currentTarget.id))
 	}, [dispatch])
+
+    const sectionsStats = useAppSelector(selectSectionStats(courseId, id))
 
     const header = (
         <>
@@ -45,7 +48,16 @@ const CourseSectionItem: React.FC<Section> = ({ id, title }) => {
                     }
                 </button>
             </div>
-            <p className="text-lg font-semibold text-gray-800 hover:text-gray-600">{title}</p>
+            <div className="flex-grow">
+                <p className=" text-left text-lg font-semibold text-gray-800 hover:text-gray-600">{title}</p>
+                {sectionsStats &&
+                    <div className="text-gray-500">
+                        <span>{sectionsStats.totalLessons} Lessons</span>
+                        <span> | {toDuration(sectionsStats.totalSeconds)} Duration</span>
+                    </div>
+                }
+            </div>
+
             {deleteSectionResult.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">{getErrorMessage(deleteSectionResult.error)}</p>}
         </>
     )
@@ -53,7 +65,7 @@ const CourseSectionItem: React.FC<Section> = ({ id, title }) => {
         <li>
             <ExpandablePanel header={header}>
                 <LessonForm sectionId={id} />
-                <CourseLessonsList sectionId={id} />
+                <CourseLessonsList courseId={courseId} sectionId={id} />
             </ExpandablePanel>
         </li>
     )

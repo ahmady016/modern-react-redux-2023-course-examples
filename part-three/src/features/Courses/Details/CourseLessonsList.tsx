@@ -1,16 +1,35 @@
 import React from 'react'
 
+import { useAppDispatch } from '../../../redux/store'
+import { setCourseStats } from '../RTK_Query/coursesSlice'
 import { getErrorMessage, useGetLessonsQuery } from '../RTK_Query'
+import { toTotalDuration, toTotalSeconds } from '../timeUtils'
 
 import Spinner from '../../../components/Spinner'
 
 import CourseLessonItem from './CourseLessonItem'
 
 type CourseLessonsListProps = {
+    courseId: string
     sectionId: string
 }
-const CourseLessonsList: React.FC<CourseLessonsListProps> = ({ sectionId }) => {
+const CourseLessonsList: React.FC<CourseLessonsListProps> = ({ courseId, sectionId }) => {
     const { isLoading, isError, error, data: lessons } = useGetLessonsQuery(sectionId, { skip: Boolean(!sectionId) })
+
+    const dispatch = useAppDispatch()
+    React.useEffect(() => {
+        if(lessons?.length) {
+            const lessonsLengths = lessons.map(lesson => lesson.length)
+            const sectionStatsPayload = {
+                courseId,
+                sectionId,
+                totalLessons: lessons.length,
+                totalDuration: toTotalDuration(lessonsLengths),
+                totalSeconds: toTotalSeconds(lessonsLengths)
+            }
+            dispatch(setCourseStats(sectionStatsPayload))
+        }
+    }, [courseId, sectionId, lessons, dispatch])
 
     if(isLoading)
         return <Spinner align='center' size={10} />
