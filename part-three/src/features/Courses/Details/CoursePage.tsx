@@ -13,7 +13,6 @@ const CoursePage: React.FC = () => {
 			<CourseInfoCard courseId={courseId!} />
 			<hr className="h-px mb-8 bg-gray-300 border-0" />
 			<SectionForm courseId={courseId!} />
-			<hr className="h-px my-8 bg-gray-300 border-0" />
 			<CourseSectionsList courseId={courseId!} />
 		</div>
 	)

@@ -31,11 +31,11 @@ export const coursesApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/courses' }),
     endpoints: (builder) => ({
         getCourses: builder.query<Course[], void>({
-            query: () => ({ url: '/'}),
+            query: () => ({ url: ''}),
             providesTags: coursesListTags,
         }),
         searchCourses: builder.query<Course[], string>({
-            query: (q: string) => ({ url: '/', params: { q }}),
+            query: (q: string) => ({ url: '', params: { q }}),
             providesTags: coursesListTags,
         }),
         getCourse: builder.query<Course, string>({
@@ -47,7 +47,7 @@ export const coursesApi = createApi({
             providesTags: (_, __, id) => [{ type: COURSES, id }],
         }),
         createCourse: builder.mutation<Course, Partial<Course>>({
-            query: (newCourse) => ({ url: '/', method: 'POST', body: newCourse }),
+            query: (newCourse) => ({ url: '', method: 'POST', body: newCourse }),
             invalidatesTags: [{ type: COURSES, id: 'LIST' }]
         }),
         updateCourse: builder.mutation<Course, Partial<Course> & Pick<Course,'id'>>({

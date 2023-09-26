@@ -215,6 +215,76 @@
       "id": "CYUXkJQB_o",
       "title": "Communication Using the Context System",
       "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "iD4QAlqym2",
+      "title": "Deeper Dive into Hooks!",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "VBgUq3nX9_",
+      "title": "Custom Navigation and Routing Systems",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "EvMvlUAuHi",
+      "title": "Mastering the State Design Process",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "KSwG6J_g_m",
+      "title": "Practicing Props and State Design",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "tNfPJCuR9c",
+      "title": "Making Navigation Reusable",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "dZj_v3Si-5",
+      "title": "Creating Portals with ReactDOM",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "-NRHbYbfw-",
+      "title": "Make a Feature-Full Data Table!",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "5x88zfcALX",
+      "title": "Getting Clever with Data Sorting",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "FymRVtUZy2",
+      "title": "Custom Hooks In Depth",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "fsWWWi2ARK",
+      "title": "Into the World of Reducers",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "DbeLnNuCfl",
+      "title": "Dive Into Redux Toolkit",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "S-_w_BDxgE",
+      "title": "Managing Multiple Slices with Redux Toolkit",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "-euXl1TKHE",
+      "title": "Interfacing with API's Using Async Thunks",
+      "courseId": "TvA1wTw3_f"
+    },
+    {
+      "id": "SOmjZdOkmU",
+      "title": "Modern Async with Redux Toolkit Query",
+      "courseId": "TvA1wTw3_f"
     }
   ],
   "lessons": [
@@ -355,6 +425,714 @@
       "title": "Using Argument Destructuring",
       "length": "04:57",
       "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "BfG1QUT11K",
+      "title": "Exercise Solution",
+      "length": "01:30",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "59wlRGTgvo",
+      "title": "The React Developer Tools",
+      "length": "02:37",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "ArTfvhc9Pe",
+      "title": "The Most Common Props Mistake",
+      "length": "04:42",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "KOipPcGC3a",
+      "title": "Including Images",
+      "length": "08:09",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "hhntSO3M66",
+      "title": "Handling Image Accessibility",
+      "length": "06:39",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "KB9zN8-zkm",
+      "title": "Review on how CSS Works",
+      "length": "06:10",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "bPC500hmCN",
+      "title": "Adding CSS Libraries with NPM",
+      "length": "05:57",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "ccQdlluPeX",
+      "title": "A Big Pile of HTML!",
+      "length": "09:38",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "dFTQEX8sFU",
+      "title": "Last Bit of Styling",
+      "length": "05:45",
+      "sectionId": "AgUlUyEIhD"
+    },
+    {
+      "id": "MtSefM2Xry",
+      "title": "App Overview",
+      "length": "02:52",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "1euoMFGZKy",
+      "title": "Initial App Setup",
+      "length": "05:09",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "bXmE-eE4Ou",
+      "title": "Introducing the Event System",
+      "length": "03:14",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "lGRmmWlVMP",
+      "title": "Events in Detail",
+      "length": "08:11",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "d3V5z_VOOh",
+      "title": "Variations on Event Handlers",
+      "length": "06:42",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "lHKYqQ0-Pc",
+      "title": "Exercise Solution",
+      "length": "01:15",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "OANzLyyvkK",
+      "title": "Introducing the State System",
+      "length": "03:43",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "OcE3ZXnJ6h",
+      "title": "More on State",
+      "length": "08:43",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "_sO2SX63ed",
+      "title": "Understanding the Re-Rendering Process",
+      "length": "08:10",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "QFCPf-wgvA",
+      "title": "Why Array Destructuring?",
+      "length": "08:41",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "s6DcAVniAs",
+      "title": "Back to the App",
+      "length": "03:33",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "MdbRHvcB6m",
+      "title": "Picking a Random Element",
+      "length": "07:11",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "OwDoxJQf6N",
+      "title": "List Building in React",
+      "length": "09:46",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "ezkendodRZ",
+      "title": "Loading and Showing SVGs",
+      "length": "05:50",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "RVepxGh4DZ",
+      "title": "Increasing Image Size",
+      "length": "05:51",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "U3x60Os52i",
+      "title": "Adding Custom CSS",
+      "length": "06:21",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "rGnwxsprXx",
+      "title": "Finalizing Styling",
+      "length": "05:58",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "_IIrwA50aJ",
+      "title": "App Wrapup and Review",
+      "length": "08:52",
+      "sectionId": "1JUVXHxuVx"
+    },
+    {
+      "id": "Mkp5AyeYqV",
+      "title": "App Overview",
+      "length": "02:24",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "cL5d2Fyd_u",
+      "title": "Project Setup",
+      "length": "05:53",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "9s9MY80h3N",
+      "title": "The Path Forward",
+      "length": "04:06",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "AoL-68scYT",
+      "title": "Overview of HTTP Requests",
+      "length": "11:15",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "B6K_vJ0Wcn",
+      "title": "Understanding the API",
+      "length": "06:07",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "HNg_Fa2h5M",
+      "title": "Making an HTTP Request",
+      "length": "10:36",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "uIheyw8yBy",
+      "title": "[Optional] Using Async / Await",
+      "length": "02:38",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "k2KR7XHzTB",
+      "title": "Data Fetching Cleanup",
+      "length": "03:20",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "8gwVl7gEgI",
+      "title": "Thinking About Data Flow",
+      "length": "08:42",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "3wjsAvYitU",
+      "title": "Child to Parent Communication",
+      "length": "06:07",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "ZMljiOPsz1",
+      "title": "Implementing Child to Parent Communication",
+      "length": "07:29",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "-BaQOq7JGE",
+      "title": "Handling Form Submission",
+      "length": "11:32",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "GuWlp83mvb",
+      "title": "Handling Input Elements",
+      "length": "09:21",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "GRi_NDVVv_",
+      "title": "[Optional] OK But Why?",
+      "length": "14:21",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "VFT-wTCR1H",
+      "title": "Exercise Solution",
+      "length": "02:35",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "kSBjC8CbFJ",
+      "title": "Running the Search",
+      "length": "04:06",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "TpegYtq5Yx",
+      "title": "Reminder on Async / Await",
+      "length": "03:00",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "5uz6Ygv3GV",
+      "title": "Communicating the List of Images Down",
+      "length": "12:31",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "NJ1WE3VzaC",
+      "title": "Building a List of Images",
+      "length": "05:03",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "kuq-ciGK9n",
+      "title": "Building a List of Images",
+      "length": "05:03",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "NET_hv5jbJ",
+      "title": "Handling List Updates",
+      "length": "09:10",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "YvLVGljIzP",
+      "title": "Notes on Keys",
+      "length": "09:22",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "I99pTTNort",
+      "title": "Displaying Images",
+      "length": "01:48",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "XN27K87lSU",
+      "title": "A Touch of Styling",
+      "length": "04:26",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "_55UuTMJrs",
+      "title": "App Wrapup",
+      "length": "03:41",
+      "sectionId": "80NwTqKjak"
+    },
+    {
+      "id": "_u2sOrSuKF",
+      "title": "App Overview",
+      "length": "03:20",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "sBq72EdXjD",
+      "title": "Initial Setup",
+      "length": "05:56",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "v1GRBnClrC",
+      "title": "State Location",
+      "length": "05:14",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "kVmA-jFlfU",
+      "title": "Reminder on Event Handlers",
+      "length": "04:51",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "qrqFpUWAl6",
+      "title": "Receiving New Titles",
+      "length": "08:54",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "MQ7SOxGDPJ",
+      "title": "Adding Styling",
+      "length": "02:12",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "qB97nNDCw_",
+      "title": "Updating State",
+      "length": "10:24",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "X2oJPg_CZ7",
+      "title": "Don't Mutate That State!",
+      "length": "04:26",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "P17qYN3dpN",
+      "title": "[Optional] Adding Elements to the Start or End",
+      "length": "01:24",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "ubZP1CRaX6",
+      "title": "[Optional] Exercise Solution",
+      "length": "02:00",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "xUbH8B26ka",
+      "title": "[Optional] Removing Elements",
+      "length": "07:04",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "EbE7CLd-C8",
+      "title": "[Optional] Exercise Solution",
+      "length": "02:09",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "G52Q5xZHrX",
+      "title": "[Optional] Modifying Elements",
+      "length": "06:05",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "eV37g359G0",
+      "title": "[Super Optional] Why the Special Syntax?",
+      "length": "07:10",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "NMi70MetVt",
+      "title": "[Optional] Exercise Solution",
+      "length": "02:26",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "nY7QQLFtjP",
+      "title": "[Optional] Adding, Changing, or Removing Object Properties",
+      "length": "03:58",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "sApTgQxhw4",
+      "title": "Adding a Book, For Real!",
+      "length": "01:49",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "nL1jUSiWyl",
+      "title": "Generating Random ID's",
+      "length": "02:05",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "M7FIbCp5gC",
+      "title": "Displaying the List",
+      "length": "05:35",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "tV27xShSWf",
+      "title": "Deleting Records",
+      "length": "06:36",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "85GfpRqnuq",
+      "title": "Toggling Form Display",
+      "length": "06:31",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "FJGKXKGPBc",
+      "title": "Default Form Values",
+      "length": "07:06",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "zflRSq58pF",
+      "title": "Updating the Title",
+      "length": "08:44",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "A82OK1hDAW",
+      "title": "Closing the Form on Submit",
+      "length": "05:06",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "0lFTFLx_ef",
+      "title": "A Better Solution!",
+      "length": "04:30",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "YJR8uLN6N1",
+      "title": "Collapsing Two Handlers into One",
+      "length": "03:18",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "kZVyyU6Kxx",
+      "title": "Adding Images",
+      "length": "07:58",
+      "sectionId": "WPeXt7EKTV"
+    },
+    {
+      "id": "sWENBpOUQh",
+      "title": "Adding Data Persistence",
+      "length": "07:48",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "O6LWoOSLA6",
+      "title": "Introducing Context",
+      "length": "09:12",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "4mBl7-wnb4",
+      "title": "Server Setup",
+      "length": "03:44",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "5IxApxP06P",
+      "title": "What Just Happened?",
+      "length": "04:36",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "mDF9vIGFtq",
+      "title": "How the API Works",
+      "length": "05:20",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "DTYzWyxKja",
+      "title": "Introducing the REST Client",
+      "length": "05:05",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "QrnSMm8CCt",
+      "title": "Using the REST Client",
+      "length": "06:58",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "eMuQ3bth-O",
+      "title": "Creating a New Record",
+      "length": "06:56",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "HgHw0rqKih",
+      "title": "Fetching a List of Records",
+      "length": "04:25",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "mYZtyv8zmd",
+      "title": "Introducing useEffect",
+      "length": "02:51",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "nRIumrZK0J",
+      "title": "useEffect in Action",
+      "length": "06:24",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "Ka1FUPAPPs",
+      "title": "More on useEffect",
+      "length": "09:52",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "HQIoioKUaU",
+      "title": "Updating a Record",
+      "length": "03:18",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "KULysZwbJy",
+      "title": "Thinking About Updates",
+      "length": "05:27",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "ivGLIqnCGS",
+      "title": "Deleting a Record",
+      "length": "01:18",
+      "sectionId": "RKenRoHONY"
+    },
+    {
+      "id": "iogznZhreE",
+      "title": "Context in Action",
+      "length": "06:15",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "c-6ap5BIda",
+      "title": "Changing Context Values",
+      "length": "06:51",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "sCGSBy9uj9",
+      "title": "More on Changing Context",
+      "length": "08:46",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "JI0mJX4HzS",
+      "title": "Application vs Component State",
+      "length": "11:50",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "xRIEugj7uM",
+      "title": "Refactoring to Use Context",
+      "length": "04:38",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "wVXRqptF_C",
+      "title": "Refactoring the App",
+      "length": "05:32",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "r0miK2F64q",
+      "title": "Reminder on Sharing with Context",
+      "length": "06:12",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "jFOKiR8Lje",
+      "title": "Props and Context Together",
+      "length": "03:08",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "v3HLA5pELh",
+      "title": "Last Bit of Refactoring",
+      "length": "05:55",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "YfyJf3zft7",
+      "title": "A Small Taste of Reusable Hooks",
+      "length": "09:53",
+      "sectionId": "CYUXkJQB_o"
+    },
+    {
+      "id": "Z_YS6iEstD",
+      "title": "Return to useEffect",
+      "length": "08:06",
+      "sectionId": "iD4QAlqym2"
+    },
+    {
+      "id": "jQjPW38smm",
+      "title": "Project Overview",
+      "length": "04:25",
+      "sectionId": "VBgUq3nX9_"
+    },
+    {
+      "id": "bh7pdifUk-",
+      "title": "Project Organization",
+      "length": "10:43",
+      "sectionId": "EvMvlUAuHi"
+    },
+    {
+      "id": "nlIpK3kNzF",
+      "title": "Component Overview",
+      "length": "01:08",
+      "sectionId": "KSwG6J_g_m"
+    },
+    {
+      "id": "T9yztBAUoP",
+      "title": "Traditional Browser Navigation",
+      "length": "09:33",
+      "sectionId": "tNfPJCuR9c"
+    },
+    {
+      "id": "MPs6Xz82m4",
+      "title": "Modal Component Overview",
+      "length": "04:20",
+      "sectionId": "dZj_v3Si-5"
+    },
+    {
+      "id": "Emu65bw3Hb",
+      "title": "Creating a Reusable table",
+      "length": "03:34",
+      "sectionId": "-NRHbYbfw-"
+    },
+    {
+      "id": "bjAKBgIIm1",
+      "title": "Adding Sorting to the Table",
+      "length": "06:38",
+      "sectionId": "5x88zfcALX"
+    },
+    {
+      "id": "inDV9bwfud",
+      "title": "Exploring Code Reuse",
+      "length": "03:39",
+      "sectionId": "FymRVtUZy2"
+    },
+    {
+      "id": "7eyI1fP1XW",
+      "title": "App Overview",
+      "length": "03:03",
+      "sectionId": "fsWWWi2ARK"
+    },
+    {
+      "id": "xyZbclDbHB",
+      "title": "Into the World of Redux",
+      "length": "05:23",
+      "sectionId": "DbeLnNuCfl"
+    },
+    {
+      "id": "AvX0KDrZMD",
+      "title": "Project Overview",
+      "length": "04:10",
+      "sectionId": "S-_w_BDxgE"
+    },
+    {
+      "id": "S5uh4ca8bU",
+      "title": "App Overview",
+      "length": "08:36",
+      "sectionId": "-euXl1TKHE"
+    },
+    {
+      "id": "sgfE2a4KQI",
+      "title": "[Optional] Getting Caught Up",
+      "length": "02:47",
+      "sectionId": "SOmjZdOkmU"
     }
   ]
 }

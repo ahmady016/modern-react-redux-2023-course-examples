@@ -49,7 +49,7 @@ const SectionForm: React.FC<SectionFormProps> = ({ courseId }) => {
 	}, [formState, createSection, updateSection])
 
 	return (
-        <fieldset className="w-11/12 m-auto p-5 rounded-md border border-solid border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400">
+        <fieldset className="w-4/6 mb-4 mx-auto p-5 rounded-md border border-solid border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400">
             <legend className="w-fit px-3 text-xl">{sectionId ? "Update Existing Section" : "Create New Section"}</legend>
             {getSectionQuery.isFetching && <Spinner size={10} align="center" />}
             {getSectionQuery.isError && <p className="mt-3 p-3 rounded-md text-center bg-red-400 text-red-900">{getErrorMessage(getSectionQuery.error)}</p>}

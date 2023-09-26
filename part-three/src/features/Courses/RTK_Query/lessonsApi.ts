@@ -32,7 +32,7 @@ export const lessonsApi = createApi({
             providesTags: (_, __, id) => [{ type: LESSONS, id }],
         }),
         createLesson: builder.mutation<Lesson, Partial<Lesson>>({
-            query: (newLesson) => ({ url: '/', method: 'POST', body: newLesson }),
+            query: (newLesson) => ({ url: '', method: 'POST', body: newLesson }),
             invalidatesTags: (_, __, { sectionId }) => {
                 const tag: TagDescription<"LESSONS"> = { type: LESSONS, id: sectionId }
                 return [tag]
